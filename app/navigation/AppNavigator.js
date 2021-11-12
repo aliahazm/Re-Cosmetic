@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
 import NewListingButton from "./NewListingButton";
@@ -66,11 +67,11 @@ const AppNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Profile"
+      name="More"
       component={HowItWorksNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="account" color={color} size={size} />
+          <MaterialIcons name="more-horiz" color={color} size={size} />
         ),
         headerShown: false,
       }}
