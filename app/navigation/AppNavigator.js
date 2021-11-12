@@ -10,6 +10,7 @@ import RewardNavigator from "./RewardNavigator";
 import AboutUsNavigator from "./AboutUsNavigator";
 import TermsAndConditionsNavigator from "./TermsAndConditionsNavigator";
 import RecycleRequestNavigator from "./RecycleRequestNavigator";
+import MyPoints from "../screens/MyPoints";
 
 const Tab = createBottomTabNavigator();
 
