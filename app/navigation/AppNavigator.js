@@ -28,7 +28,7 @@ const AppNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Reward"
+      name="Points"
       component={RewardNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
