@@ -11,7 +11,7 @@ import RewardNavigator from "./RewardNavigator";
 import AboutUsNavigator from "./AboutUsNavigator";
 import TermsAndConditionsNavigator from "./TermsAndConditionsNavigator";
 import RecycleRequestNavigator from "./RecycleRequestNavigator";
-import MyPoints from "../screens/MyPoints";
+import MyPointsNavigator from "./MyPointsNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -29,7 +29,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="Points"
-      component={RewardNavigator}
+      component={MyPointsNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons
