@@ -10,5 +10,6 @@ export default Object.freeze({
   ABOUT_US: "AboutUs",
   MY_POINTS: "MyPoints",
   WITHDRAW: "Withdraw",
-  TRANSFER_POINTS: "TransferPoints"
+  TRANSFER_POINTS: "TransferPoints",
+  MORE: "More"
 });

@@ -6,7 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import NewListingButton from "./NewListingButton";
 import routes from "./routes";
-import HowItWorksNavigator from "./HowItWorksNavigator";
+import MoreNavigator from "./MoreNavigator";
 import RewardNavigator from "./RewardNavigator";
 import AboutUsNavigator from "./AboutUsNavigator";
 import TermsAndConditionsNavigator from "./TermsAndConditionsNavigator";
@@ -68,7 +68,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="More"
-      component={HowItWorksNavigator}
+      component={MoreNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialIcons name="more-horiz" color={color} size={size} />

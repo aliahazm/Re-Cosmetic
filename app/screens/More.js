@@ -11,10 +11,11 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
-
+import { Ionicons } from "@expo/vector-icons";
+import routes from "../navigation/routes";
 import colors from "../config/colors";
 import PointsButton from "../components/PointsButton";
-function More(props) {
+function More({navigation}) {
   return (
     <SafeAreaView
       style={{
@@ -33,24 +34,24 @@ function More(props) {
            flexDirection: "row"
        }}>
         <Image source={require('../assets/profile.jpg')} style={{
-          height:150, 
-          width: 150, 
+          height:100, 
+          width: 100, 
           borderRadius: 90,
           borderWidth: 0.5,
           borderColor: colors.olive, 
-          marginBottom: 10, 
-          marginTop: 40, 
-          alignSelf: 'center' 
+          margin: 20
          }}/>
-         <Text style={{alignSelf: 'center', fontWeight:'500', fontSize: 20, color: colors.grey}}>Current Points</Text>
-         <Text style={{alignSelf: 'center', fontWeight:'700', padding: 5, fontSize: 30, color: '#6A7D5A', marginBottom: 20}}>100 pts</Text>
+
+
+         <Text style={{fontWeight:'500', fontSize: 15, color: colors.grey}}>Alya Sabreena</Text>
+         <Text style={{fontWeight:'500', fontSize: 15, color: '#6A7D5A'}}>100 pts</Text>
         </View>
 
          <View style={{
             
          }}>
          
-        <TouchableOpacity onPress={() => navigation.navigate(routes.HOW_IT_WORKS)} style={{paddingVertical: 15, marginBottom: 25}}>
+        <TouchableOpacity onPress={() => navigation.navigate(routes.RECYCLE_STEPS)} style={{paddingVertical: 15, marginBottom: 25}}>
           <View style={{flexDirection: 'row', alignItems: 'center', }}>
             <Ionicons name='exit-outline' size={22}/>
             <Text style={{fontSize: 15, marginLeft: 5, fontWeight: '500'}}>

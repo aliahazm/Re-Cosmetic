@@ -1,20 +1,22 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import RecycleSteps from "../screens/RecycleSteps";
+import Point from "../screens/Point";
 import colors from "../config/colors";
-import MyPoints from "../screens/MyPoints";
-import AllRewards from "../screens/AllRewards";
-import MyRewards from "../screens/MyRewards";
-import MyVoucher from "../screens/MyVoucher";
+
+import More from "../screens/More";
+import AboutUs from "../screens/AboutUs";
+import TermsAndConditions from "../screens/TermsAndConditions";
 
 const Stack = createNativeStackNavigator();
 
-const MyPointsNavigator = () => (
+const MoreNavigator = () => (
   <Stack.Navigator presentation="modal" animationTypeForReplace="pop">
     <Stack.Screen
-      name="MyPoints"
-      component={MyPoints}
+      name="More"
+      component={More}
       options={{
-        title: "MY POINTS",
+        title: "MORE",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
@@ -23,11 +25,24 @@ const MyPointsNavigator = () => (
       }}
     />
 
-  <Stack.Screen
-      name="AllRewards"
-      component={AllRewards}
+    <Stack.Screen
+      name="RecycleSteps"
+      component={RecycleSteps}
+      //options={{ headerShown: false }}
       options={{
-        title: "REWARD",
+        title: "HOW IT WORKS",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        headerShadowVisible: false,
+      }}
+    />
+
+    <Stack.Screen
+      name="Point"
+      component={Point}
+      options={{
+        title: "HOW IT WORKS",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
@@ -36,11 +51,11 @@ const MyPointsNavigator = () => (
       }}
     />
 
-  <Stack.Screen
-      name="MyRewards"
-      component={MyRewards}
+    <Stack.Screen
+      name="AboutUs"
+      component={AboutUs}
       options={{
-        title: "REWARD",
+        title: "ABOUT US",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
@@ -49,20 +64,19 @@ const MyPointsNavigator = () => (
       }}
     />
 
-  <Stack.Screen
-      name="MyVoucher"
-      component={MyVoucher}
+    <Stack.Screen
+      name="TermsAndConditions"
+      component={TermsAndConditions}
       options={{
-        title: "MY VOUCHER",
+        title: "TERMS & CONDITIONS",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: true,
+        headerBackVisible: false,
       }}
     />
-
   </Stack.Navigator>
 );
 
-export default MyPointsNavigator;
+export default MoreNavigator;
