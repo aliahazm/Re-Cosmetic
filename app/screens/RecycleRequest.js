@@ -1,5 +1,13 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Image } from "react-native";
+import {
+  View,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Text,
+} from "react-native";
 import * as Yup from "yup";
 
 import colors from "../config/colors";
@@ -16,7 +24,12 @@ import BrandPickerItem from "../components/BrandPickerItem";
 import OutletPickerItem from "../components/OutletPickerItem";
 import DatePickerModal2 from "../components/DatePickerModal2";
 import CategoryPickerItem from "../components/CategoryPickerItem";
+import PointModal from "../components/PointModal";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import ItemCounter from "../components/ItemCounter";
+
+import routes from "../navigation/routes";
+import AppButton3 from "../components/AppButton3";
 
 const validationSchema = Yup.object().shape({
   //date: Yup.array().min(1, "Please select date."),
@@ -278,78 +291,88 @@ const SkinnedCoRecyclableItems = [
   },
 ];
 
-function RecycleRequest() {
+function RecycleRequest({ navigation }) {
   return (
     <>
       <SafeAreaView
         style={{
-          backgroundColor: colors.creme,
+          backgroundColor: colors.pink,
           flex: 1,
         }}
       >
-        <RCScreen style={styles.container}>
-          <Form
-            initialValues={{
-              date: [],
-              brand: "",
-              outlet: "",
-              recyclableItem: null,
-              quantity: "",
-            }}
-            onSubmit={(values) => console.log(values)}
-            validationSchema={validationSchema}
-          >
-            <AppText style={styles.title}>DATE</AppText>
+        <ScrollView>
+          <RCScreen style={styles.container}>
+            <Form
+              initialValues={{
+                date: [],
+                brand: "",
+                outlet: "",
+                recyclableItem: null,
+                quantity: "",
+              }}
+              onSubmit={(values) => console.log(values)}
+              validationSchema={validationSchema}
+            >
+              <AppText style={styles.title}>DATE</AppText>
+              <DatePickerModal2 />
+              <AppText style={styles.title}>BRAND</AppText>
+              <Picker
+                items={brands}
+                name="brand"
+                numberOfColumns={2}
+                PickerItemComponent={BrandPickerItem}
+                placeholder="Select brand"
+                width="60%"
+              />
+              <AppText style={styles.title}>OUTLET</AppText>
 
-            <DatePickerModal2 />
+              {
+                (brands.value = 1 ? (
+                  <Picker
+                    items={MiliandRoseOutlets}
+                    name="outlet"
+                    numberOfColumns={1}
+                    PickerItemComponent={OutletPickerItem}
+                    placeholder="Select outlet"
+                    width="100%"
+                  />
+                ) : (
+                  <Picker
+                    items={MeizlabOutlets}
+                    name="outlet"
+                    numberOfColumns={1}
+                    PickerItemComponent={OutletPickerItem}
+                    placeholder="Select outlet"
+                    width="100%"
+                  />
+                ))
+              }
 
-            <AppText style={styles.title}>BRAND</AppText>
+              <AppText style={styles.title}>RECYCLABLE ITEM</AppText>
 
-            <Picker
-              items={brands}
-              name="brand"
-              numberOfColumns={2}
-              PickerItemComponent={BrandPickerItem}
-              placeholder="Select brand"
-              width="60%"
-            />
+              <Picker
+                items={MiliandRoseRecyclableItems}
+                name="recyclableItem"
+                numberOfColumns={2}
+                PickerItemComponent={CategoryPickerItem}
+                placeholder="Recyclable Item"
+                width="80%"
+              />
 
-            <AppText style={styles.title}>OUTLET</AppText>
+              <AppText style={styles.title}>ITEM QUANTITY</AppText>
 
-            <Picker
-              items={InnisfreeOutlets}
-              name="outlet"
-              numberOfColumns={1}
-              PickerItemComponent={OutletPickerItem}
-              placeholder="Select outlet"
-              width="100%"
-            />
+              <ItemCounter />
 
-            <AppText style={styles.title}>RECYCLABLE ITEM</AppText>
-
-            <Picker
-              items={SkinnedCoRecyclableItems}
-              name="recyclableItem"
-              numberOfColumns={2}
-              PickerItemComponent={CategoryPickerItem}
-              placeholder="Recyclable Item"
-              width="100%"
-            />
-
-            {/* <AppText style={styles.title}>QUANTITY</AppText>
-            <FormField
-              keyboardType="numeric"
-              maxLength={1}
-              name="quantity"
-              placeholder="Enter quantity"
-              width={200}
-            /> */}
-            <SubmitButton
-              title="SUBMIT"
-              onPress={() => navigation.navigate(routes.MY_RECYCLE_DETAILS)}
-            />
-          </Form>
-        </RCScreen>
+              <SubmitButton title="SUBMIT" />
+              <View style={{ flexDirection: "row" }}>
+                <PointModal />
+                <AppButton3
+                  onPress={() => navigation.navigate(routes.MY_RECYCLE_DETAILS)}
+                />
+              </View>
+            </Form>
+          </RCScreen>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
@@ -372,239 +395,3 @@ const styles = StyleSheet.create({
   },
 });
 export default RecycleRequest;
-
-// import React from "react";
-// import {
-//   ScrollView,
-//   SafeAreaView,
-//   Image,
-//   ImageBackground,
-//   StyleSheet,
-//   View,
-//   Text,
-//   Button,
-//   useColorScheme,
-//   TouchableOpacity,
-// } from "react-native";
-// import { MaterialCommunityIcons } from "@expo/vector-icons";
-// import { MaterialIcons } from "@expo/vector-icons";
-// import { SimpleLineIcons } from "@expo/vector-icons";
-
-// //import AppText from './app/components/AppText';
-
-// import AppButton from "../components/AppButton";
-// import colors from "../config/colors";
-// function RecycleRequest(props) {
-//   return (
-//     //Header: RECYCLE REQUEST
-//     <SafeAreaView
-//       style={{
-//         backgroundColor: colors.creme,
-//         flex: 1,
-//       }}
-//     >
-//       {/* Content */}
-//       <View
-//         style={{
-//           backgroundColor: colors.pink,
-//           flex: 1,
-//         }}
-//       >
-//         <View //Date
-//           style={{
-//             backgroundColor: colors.pink,
-//             flex: 0.7,
-//             top: 10,
-//           }}
-//         >
-//           <Text style={styles.title}>DATE</Text>
-//         </View>
-
-//         <View //Brand
-//           style={{
-//             backgroundColor: colors.pink,
-//             flex: 0.7,
-//           }}
-//         >
-//           <Text style={styles.title}>BRAND</Text>
-//         </View>
-
-//         <View //Outlet
-//           style={{
-//             backgroundColor: colors.pink,
-//             flex: 0.7,
-//           }}
-//         >
-//           <Text style={styles.title}>OUTLET</Text>
-//         </View>
-
-//         <View //Recyclable Item
-//           style={{
-//             backgroundColor: colors.pink,
-//             flex: 1.5,
-//           }}
-//         >
-//           <Text style={styles.title}>RECYCLABLE ITEM</Text>
-
-//           <View //Item images
-//             style={{
-//               backgroundColor: colors.pink,
-//               flex: 0.1,
-//               flexDirection: "row",
-//               marginHorizontal: 25,
-//               marginTop: 15,
-//               justifyContent: "space-between",
-//             }}
-//           >
-//             <View //Item 1
-//               style={{
-//                 backgroundColor: colors.white,
-//                 flex: 1,
-//                 width: 150,
-//                 height: 120,
-//                 borderColor: colors.grey,
-//                 borderWidth: 1,
-//                 borderRadius: 25,
-//                 marginRight: 10,
-//               }}
-//             >
-//               <Text style={styles.title}>Images</Text>
-//             </View>
-
-//             <View //Item 2
-//               style={{
-//                 backgroundColor: colors.white,
-//                 flex: 1,
-//                 width: 150,
-//                 height: 120,
-//                 borderColor: colors.grey,
-//                 borderWidth: 1,
-//                 borderRadius: 25,
-//                 marginRight: 10,
-//               }}
-//             >
-//               <Text style={styles.title}>Images</Text>
-//             </View>
-
-//             <View //Item 3
-//               style={{
-//                 backgroundColor: colors.white,
-//                 flex: 1,
-//                 width: 150,
-//                 height: 120,
-//                 borderColor: colors.grey,
-//                 borderWidth: 1,
-//                 borderRadius: 25,
-//               }}
-//             >
-//               <Text style={styles.title}>Images</Text>
-//             </View>
-//           </View>
-//         </View>
-
-//         <View //Points to be earned
-//           style={{
-//             backgroundColor: colors.white,
-//             width: "100%",
-//             height: 100,
-//             flex: 0.6,
-//             borderWidth: 25,
-//             borderColor: colors.white,
-//             borderRadius: 0,
-//             borderTopWidth: 25,
-//             borderTopLeftRadius: 30,
-//             borderTopRightRadius: 30,
-//             bottom: 0,
-//           }}
-//         >
-//           <MaterialCommunityIcons
-//             name="information-outline"
-//             size={20}
-//             color="#707070"
-//           />
-//           <Text style={styles.RCPoints}>RC Points</Text>
-//           <Text style={styles.earn}>(to be earned)</Text>
-//           <AppButton
-//             title="Submit"
-//             onPress={() => console.log("Tapped")}
-//           ></AppButton>
-//         </View>
-//       </View>
-//     </SafeAreaView>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     backgroundColor: colors.creme,
-//     flex: 1,
-//   },
-
-//   header: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//     textAlign: "center",
-//     color: colors.olive,
-//     marginVertical: 20,
-//   },
-
-//   previousPage: {
-//     // position: "absolute",
-//     // top: 40,
-//     // left: 30,
-//     backgroundColor: colors.creme,
-//     flex: 0.5,
-//     left: 25,
-//   },
-
-//   menu: {
-//     backgroundColor: colors.creme,
-//     flex: 0.5,
-//     right: -50,
-//   },
-
-//   content: {
-//     color: colors.grey,
-//     fontSize: 14,
-//     fontWeight: "bold",
-//     marginHorizontal: 25,
-//     marginVertical: 0,
-//     justifyContent: "center",
-//     textAlign: "justify",
-//     lineHeight: 19,
-//   },
-
-//   title: {
-//     color: colors.grey,
-//     fontSize: 14,
-//     fontWeight: "bold",
-//     marginHorizontal: 25,
-//     marginVertical: 10,
-//     justifyContent: "center",
-//     textAlign: "justify",
-//     //lineHeight: 19,
-//   },
-
-//   RCPoints: {
-//     color: colors.grey,
-//     fontSize: 16,
-//     fontWeight: "bold",
-//     marginHorizontal: 25,
-//     marginVertical: -19,
-//     justifyContent: "center",
-//     textAlign: "justify",
-//     //lineHeight: 19,
-//   },
-
-//   earn: {
-//     color: colors.grey,
-//     fontSize: 16,
-//     //fontWeight: "bold",
-//     marginHorizontal: 103,
-//     marginVertical: 0,
-//     justifyContent: "center",
-//     textAlign: "justify",
-//     //lineHeight: 19,
-//   },
-// });
-// export default RecycleRequest;

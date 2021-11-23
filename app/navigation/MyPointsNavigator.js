@@ -23,7 +23,7 @@ const MyPointsNavigator = () => (
       }}
     />
 
-  <Stack.Screen
+    <Stack.Screen
       name="AllRewards"
       component={AllRewards}
       options={{
@@ -36,7 +36,7 @@ const MyPointsNavigator = () => (
       }}
     />
 
-  <Stack.Screen
+    <Stack.Screen
       name="MyRewards"
       component={MyRewards}
       options={{
@@ -49,7 +49,7 @@ const MyPointsNavigator = () => (
       }}
     />
 
-  <Stack.Screen
+    <Stack.Screen
       name="MyVoucher"
       component={MyVoucher}
       options={{
@@ -58,10 +58,10 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
+        headerBackTitle: "Back",
         headerBackVisible: true,
       }}
     />
-
   </Stack.Navigator>
 );
 

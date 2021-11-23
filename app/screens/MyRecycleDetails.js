@@ -8,11 +8,13 @@ import {
   View,
   Text,
   Button,
+  Alert,
 } from "react-native";
 
 import AppButton from "../components/AppButton";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
+import AppText from "../components/AppText";
 import colors from "../config/colors";
 function MyRecycleDetails(props) {
   return (
@@ -39,16 +41,28 @@ function MyRecycleDetails(props) {
             width: "90%",
             height: 120,
             borderColor: colors.grey,
-            borderWidth: 1,
+            //borderWidth: 1,
             borderRadius: 25,
             //marginRight: 10,
             alignItems: "center",
             justifyContent: "center",
             marginBottom: 20,
             marginTop: 20,
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+
+            elevation: 5,
           }}
         >
-          <Text style={styles.title}>QR Code</Text>
+          <Image
+            style={styles.image}
+            source={require("../assets/QRCode.png")}
+          />
         </View>
 
         <View //Details
@@ -58,15 +72,39 @@ function MyRecycleDetails(props) {
             width: "90%",
             height: 120,
             borderColor: colors.grey,
-            borderWidth: 1,
+            //borderWidth: 1,
             borderRadius: 25,
             //marginRight: 10,
-            alignItems: "center",
-            justifyContent: "center",
+            //marginTop: 20,
+            //paddingTop: 20,
+            alignItems: "flex-start",
+            justifyContent: "flex-start",
             //marginBottom: 20,
+            shadowColor: "#000",
+            shadowOffset: {
+              width: 0,
+              height: 2,
+            },
+            shadowOpacity: 0.25,
+            shadowRadius: 3.84,
+
+            elevation: 5,
           }}
         >
-          <Text style={styles.title}>Details</Text>
+          <AppText style={styles.category}>Name</AppText>
+          <AppText style={styles.title}>Noor Aleeya Sabreena</AppText>
+          <AppText style={styles.category}>Recycle Item</AppText>
+          <AppText style={styles.title}>
+            2x MiliandRose Liquid Matte Container
+          </AppText>
+          <AppText style={styles.category}>Date</AppText>
+          <AppText style={styles.title}>Saturday, 25-12-2021</AppText>
+          <AppText style={styles.category}>Venue</AppText>
+          <AppText style={styles.title}>MiliandRose Central i-City</AppText>
+          <AppText style={styles.category}>RC Points To Be Earned</AppText>
+          <AppText style={styles.title}>20 Points</AppText>
+          <AppText style={styles.category}>Transaction Number</AppText>
+          <AppText style={styles.title}>#25299</AppText>
         </View>
 
         <View //Button : SAVE AS IMAGE
@@ -80,7 +118,7 @@ function MyRecycleDetails(props) {
         >
           <AppButton
             title="SAVE AS IMAGE"
-            onPress={() => console.log("Tapped")}
+            onPress={() => Alert.alert("Success", "Image Saved Successfully!")}
           ></AppButton>
         </View>
       </View>
@@ -92,6 +130,15 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.creme,
     flex: 1,
+  },
+
+  image: {
+    marginVertical: -20,
+    marginHorizontal: 60,
+    width: 195,
+    height: 195,
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   serviceTitle: {
@@ -116,12 +163,24 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
 
-  title: {
+  category: {
     color: colors.grey,
     fontSize: 14,
+    //fontWeight: "bold",
+    marginHorizontal: 25,
+    //marginVertical: 5,
+    marginTop: 20,
+    justifyContent: "center",
+    textAlign: "justify",
+    //lineHeight: 19,
+  },
+
+  title: {
+    color: colors.grey,
+    fontSize: 17,
     fontWeight: "bold",
     marginHorizontal: 25,
-    marginVertical: 10,
+    // marginVertical: 3,
     justifyContent: "center",
     textAlign: "justify",
     //lineHeight: 19,
