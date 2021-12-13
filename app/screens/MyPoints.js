@@ -15,6 +15,7 @@ import routes from "../navigation/routes";
 import colors from "../config/colors";
 import PointsButton from "../components/PointsButton";
 function MyPoints({navigation}) {
+  
   return (
     <SafeAreaView
       style={{
@@ -27,22 +28,27 @@ function MyPoints({navigation}) {
         style={{
           backgroundColor: colors.pink,
           flex: 1,
+
         }}
       >
-       <View>
+
+      <View style={{
+        marginTop: 80
+      }}>
+        <View>
         <Image source={require('../assets/profile.jpg')} style={{
           height:150, 
           width: 150, 
           borderRadius: 90,
           borderWidth: 0.5,
           borderColor: colors.olive, 
-          marginBottom: 10, 
+          marginBottom: 20, 
           marginTop: 40, 
           alignSelf: 'center' 
          }}/>
          <Text style={{alignSelf: 'center', fontWeight:'500', fontSize: 20, color: colors.grey}}>Current Points</Text>
          <Text style={{alignSelf: 'center', fontWeight:'700', padding: 5, fontSize: 30, color: '#6A7D5A', marginBottom: 20}}>100 pts</Text>
-        </View>
+       </View>
 
          <View style={{
              alignItems: 'center'
@@ -62,8 +68,8 @@ function MyPoints({navigation}) {
             onPress={() => navigation.navigate(routes.ALL_REWARDS)}
          />
          </View>
+      </View>
        
-
        
       </ScrollView>
     </SafeAreaView>

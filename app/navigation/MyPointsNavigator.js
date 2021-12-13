@@ -5,6 +5,7 @@ import MyPoints from "../screens/MyPoints";
 import AllRewards from "../screens/AllRewards";
 import MyRewards from "../screens/MyRewards";
 import MyVoucher from "../screens/MyVoucher";
+import TransferPoints from "../screens/TransferPoints";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,19 @@ const MyPointsNavigator = () => (
       component={MyPoints}
       options={{
         title: "MY POINTS",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        headerShadowVisible: false,
+        headerBackVisible: false,
+      }}
+    />
+
+    <Stack.Screen
+      name="TransferPoints"
+      component={TransferPoints}
+      options={{
+        title: "TRANSFER POINTS",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },

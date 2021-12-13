@@ -8,7 +8,7 @@ import NewListingButton from "./NewListingButton";
 import routes from "./routes";
 import MoreNavigator from "./MoreNavigator";
 import RewardNavigator from "./RewardNavigator";
-import AboutUsNavigator from "./AboutUsNavigator";
+import HomeNavigator from "./HomeNavigator";
 import TermsAndConditionsNavigator from "./TermsAndConditionsNavigator";
 import RecycleRequestNavigator from "./RecycleRequestNavigator";
 import MyPointsNavigator from "./MyPointsNavigator";
@@ -19,7 +19,7 @@ const AppNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
       name="Home"
-      component={AboutUsNavigator}
+      component={HomeNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
           <MaterialCommunityIcons name="home" color={color} size={size} />

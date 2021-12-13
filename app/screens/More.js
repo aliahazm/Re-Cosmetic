@@ -53,7 +53,7 @@ function More({navigation}) {
          
         <TouchableOpacity onPress={() => navigation.navigate(routes.RECYCLE_STEPS)} style={{paddingVertical: 15, marginBottom: 25}}>
           <View style={{flexDirection: 'row', alignItems: 'center', }}>
-            <Ionicons name='exit-outline' size={22}/>
+            <Ionicons name='information-outline' size={22}/>
             <Text style={{fontSize: 15, marginLeft: 5, fontWeight: '500'}}>
               How It Works</Text>
           </View>
@@ -61,7 +61,7 @@ function More({navigation}) {
 
         <TouchableOpacity onPress={() => navigation.navigate(routes.ABOUT_US)} style={{paddingVertical: 15, marginBottom: 25}}>
           <View style={{flexDirection: 'row', alignItems: 'center', }}>
-            <Ionicons name='exit-outline' size={22}/>
+            <Ionicons name='people-outline' size={22}/>
             <Text style={{fontSize: 15, marginLeft: 5, fontWeight: '500'}}>
               About Us</Text>
           </View>
@@ -69,7 +69,7 @@ function More({navigation}) {
 
         <TouchableOpacity onPress={() => navigation.navigate(routes.TERMS_AND_CONDITIONS)} style={{paddingVertical: 15, marginBottom: 25}}>
           <View style={{flexDirection: 'row', alignItems: 'center', }}>
-            <Ionicons name='exit-outline' size={22}/>
+            <Ionicons name='reader-outline' size={22}/>
             <Text style={{fontSize: 15, marginLeft: 5, fontWeight: '500'}}>
               Terms and Conditions</Text>
           </View>
@@ -88,7 +88,7 @@ function More({navigation}) {
       </View>
          
 
-         </View>
+      </View>
        
 
        

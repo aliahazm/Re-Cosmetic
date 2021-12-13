@@ -1,17 +1,17 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AboutUs from "../screens/AboutUs";
 import colors from "../config/colors";
+import Home from "../screens/Home";
 
 const Stack = createNativeStackNavigator();
 
-const RewardNavigator = () => (
+const HomeNavigator = () => (
   <Stack.Navigator presentation="modal" animationTypeForReplace="pop">
     <Stack.Screen
-      name="AboutUs"
-      component={AboutUs}
+      name="Home"
+      component={Home}
       options={{
-        title: "ABOUT US",
+        title: "HOME",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
@@ -22,4 +22,4 @@ const RewardNavigator = () => (
   </Stack.Navigator>
 );
 
-export default RewardNavigator;
+export default HomeNavigator;
