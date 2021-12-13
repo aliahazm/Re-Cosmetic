@@ -52,9 +52,9 @@ export default class ImageSlider extends React.Component {
                 height,
               }}
             >
-              {this.props.images.map((image, index) => (
+              {this.props.images.map((images, index) => (
                 <Image
-                  source={{ require: image }}
+                  source={{ require: images }}
                   style={{
                     width,
                     height,

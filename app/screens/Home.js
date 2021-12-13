@@ -30,7 +30,12 @@ function Home({ navigation }) {
     >
       {/* Content */}
       <ScrollView>
-        <Text>HELLO, BEAUTIFUL!</Text>
+        <Text style={{alignSelf: "center",
+                fontWeight: "700",
+                padding: 5,
+                fontSize: 30,
+                color: "#6A7D5A",
+                marginBottom: 20,}}>HELLO, BEAUTIFUL!</Text>
         <ImageSlider images={images} />
 
         <ScrollView>

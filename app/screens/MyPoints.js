@@ -6,7 +6,7 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -14,8 +14,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
 import PointsButton from "../components/PointsButton";
-function MyPoints({navigation}) {
-  
+function MyPoints({ navigation }) {
   return (
     <SafeAreaView
       style={{
@@ -28,49 +27,72 @@ function MyPoints({navigation}) {
         style={{
           backgroundColor: colors.pink,
           flex: 1,
-
         }}
       >
+        <View
+          style={{
+            marginTop: 80,
+          }}
+        >
+          <View>
+            <Image
+              source={require("../assets/profile.jpg")}
+              style={{
+                height: 150,
+                width: 150,
+                borderRadius: 90,
+                borderWidth: 0.5,
+                borderColor: colors.olive,
+                marginBottom: 20,
+                marginTop: 40,
+                alignSelf: "center",
+              }}
+            />
+            <Text
+              style={{
+                alignSelf: "center",
+                fontWeight: "500",
+                fontSize: 20,
+                color: colors.grey,
+              }}
+            >
+              Current Points
+            </Text>
+            <Text
+              style={{
+                alignSelf: "center",
+                fontWeight: "700",
+                padding: 5,
+                fontSize: 30,
+                color: "#6A7D5A",
+                marginBottom: 20,
+              }}
+            >
+              100 pts
+            </Text>
+          </View>
 
-      <View style={{
-        marginTop: 80
-      }}>
-        <View>
-        <Image source={require('../assets/profile.jpg')} style={{
-          height:150, 
-          width: 150, 
-          borderRadius: 90,
-          borderWidth: 0.5,
-          borderColor: colors.olive, 
-          marginBottom: 20, 
-          marginTop: 40, 
-          alignSelf: 'center' 
-         }}/>
-         <Text style={{alignSelf: 'center', fontWeight:'500', fontSize: 20, color: colors.grey}}>Current Points</Text>
-         <Text style={{alignSelf: 'center', fontWeight:'700', padding: 5, fontSize: 30, color: '#6A7D5A', marginBottom: 20}}>100 pts</Text>
-       </View>
+          <View
+            style={{
+              alignItems: "center",
+            }}
+          >
+            <PointsButton
+              title="WITHDRAW"
+              onPress={() => navigation.navigate(routes.WITHDRAW)}
+            />
 
-         <View style={{
-             alignItems: 'center'
-            }}>
-          <PointsButton 
-            title= "WITHDRAW"
-            onPress={() => navigation.navigate(routes.WITHDRAW)}
-          />
+            <PointsButton
+              title="TRANSFER POINTS"
+              onPress={() => navigation.navigate(routes.TRANSFER_POINTS)}
+            />
 
-          <PointsButton 
-            title= "TRANSFER POINTS"
-            onPress={() => navigation.navigate(routes.TRANSFER_POINTS)}
-          />
-
-         <PointsButton 
-            title= "REWARDS"
-            onPress={() => navigation.navigate(routes.ALL_REWARDS)}
-         />
-         </View>
-      </View>
-       
-       
+            <PointsButton
+              title="REWARDS"
+              onPress={() => navigation.navigate(routes.ALL_REWARDS)}
+            />
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -124,7 +146,5 @@ const styles = StyleSheet.create({
     textAlign: "justify",
     lineHeight: 19,
   },
-
-  
 });
 export default MyPoints;
