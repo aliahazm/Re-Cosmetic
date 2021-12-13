@@ -44,7 +44,8 @@ const RewardNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: true,
+        headerBackTitle: "Back",
+        headerBackVisible: false,
       }}
     />
   </Stack.Navigator>
