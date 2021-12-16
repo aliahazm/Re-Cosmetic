@@ -29,17 +29,87 @@ function Home({ navigation }) {
       }}
     >
       {/* Content */}
-      <ScrollView>
-        <Text style={{alignSelf: "center",
-                fontWeight: "700",
+      <ScrollView
+      style={{
+        backgroundColor: colors.creme,
+        flex: 1,
+      }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            paddingTop: 50,
+            paddingBottom: 50,
+            
+          }}
+        >
+          <Image
+            source={require("../assets/profile.jpg")}
+            style={{
+              height: 110,
+              width: 110,
+              borderRadius: 90,
+              borderWidth: 0.5,
+              borderColor: colors.olive,
+              marginLeft: 30,
+            }}
+          />
+
+          <View style={{ marginLeft: 20 }}>
+            <Text
+              style={{
+                alignSelf: "center",
+                fontWeight: "500",
                 padding: 5,
                 fontSize: 30,
                 color: "#6A7D5A",
-                marginBottom: 20,}}>HELLO, BEAUTIFUL!</Text>
+              }}
+            >
+              ━━━━━━━━
+            </Text>
+            <Text
+              style={{
+                alignSelf: "center",
+                fontWeight: "600",
+                padding: 5,
+                fontSize: 25,
+                color: "#6A7D5A",
+                fontFamily: "Times New Roman",
+              }}
+            >
+              HELLO, BEAUTIFUL!
+            </Text>
+
+            <Text
+              style={{
+                alignSelf: "center",
+                fontWeight: "500",
+                padding: 5,
+                fontSize: 30,
+                color: "#6A7D5A",
+              }}
+            >
+              ━━━━━━━━
+            </Text>
+          </View>
+        </View>
+
         <ImageSlider images={images} />
 
         <ScrollView>
-          <Text>UPCOMING EVENTS</Text>
+          <Text
+            style={{
+              fontSize: 20,
+              padding: 20,
+              marginTop: 30,
+              alignSelf: "center",
+              fontFamily: "Times New Roman",
+              color: colors.olive,
+            }}
+          >
+            UPCOMING EVENTS
+          </Text>
+
           <Image
             source={require("../assets/event2.jpg")}
             style={{ height, width }}
