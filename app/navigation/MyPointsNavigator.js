@@ -6,6 +6,7 @@ import AllRewards from "../screens/AllRewards";
 import MyRewards from "../screens/MyRewards";
 import MyVoucher from "../screens/MyVoucher";
 import TransferPoints from "../screens/TransferPoints";
+import Withdraw from "../screens/Withdraw";
 
 const Stack = createNativeStackNavigator();
 
