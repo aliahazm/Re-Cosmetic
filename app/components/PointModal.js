@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  Button,
   Text,
   TouchableOpacity,
   StyleSheet,
@@ -13,6 +14,7 @@ import { SubmitButton } from "./forms";
 import { AppFormField } from "./forms";
 import AppText from "./AppText";
 import Icon from "./Icon";
+import { AntDesign } from "@expo/vector-icons";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import ItemCounter from "./ItemCounter";
 import routes from "../navigation/routes";
@@ -57,6 +59,26 @@ export default class PointModal extends Component {
 
   renderModalContent = () => (
     <View style={styles.modalBox}>
+      {/* <View
+        style={{
+          marginTop: 15,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <AntDesign
+          name="closecircleo"
+          size={20}
+          color={colors.grey}
+          onPress={() => setModalVisible(false)}
+        />
+        <Button
+          title="Cancel"
+           onPress={() => setVisibleModal(false)}
+          color={colors.grey}
+        />
+      </View> */}
+
       <View style={styles.modalContent}>
         <View
           style={{
@@ -65,12 +87,16 @@ export default class PointModal extends Component {
             justifyContent: "flex-start",
           }}
         >
-          <Icon
-            name="information-outline"
-            size={45}
-            backgroundColor="#fff"
-            iconColor="#707070"
-          />
+          <TouchableOpacity
+          // onPress={() => navigation.navigate(routes.TERMS_AND_CONDITIONS)}
+          >
+            <Icon
+              name="information-outline"
+              size={45}
+              backgroundColor="#fff"
+              iconColor="#707070"
+            />
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -174,7 +200,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     borderRadius: 20,
     borderColor: "rgba(0, 0, 0, 0.1)",
-    marginTop: 5,
+    //marginTop: 5,
   },
   bottomModal: {
     justifyContent: "flex-end",

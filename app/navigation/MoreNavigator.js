@@ -35,6 +35,7 @@ const MoreNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
@@ -47,7 +48,7 @@ const MoreNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
@@ -60,7 +61,7 @@ const MoreNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
@@ -73,7 +74,7 @@ const MoreNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
   </Stack.Navigator>

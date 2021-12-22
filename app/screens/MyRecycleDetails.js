@@ -9,14 +9,17 @@ import {
   Text,
   Button,
   Alert,
+  TouchableOpacity,
 } from "react-native";
 
+import routes from "../navigation/routes";
+import Icon from "../components/Icon";
 import AppButton from "../components/AppButton";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
-function MyRecycleDetails(props) {
+function MyRecycleDetails({ navigation }) {
   return (
     //Header: My Recycle Details
     <SafeAreaView
@@ -98,10 +101,24 @@ function MyRecycleDetails(props) {
             2x MiliandRose Liquid Matte Container
           </AppText>
           <AppText style={styles.category}>Date</AppText>
-          <AppText style={styles.title}>Saturday, 25-12-2021</AppText>
+          <AppText style={styles.title}>Saturday, 31-12-2021</AppText>
           <AppText style={styles.category}>Venue</AppText>
           <AppText style={styles.title}>MiliandRose Central i-City</AppText>
-          <AppText style={styles.category}>RC Points To Be Earned</AppText>
+          <View style={{ flexDirection: "row" }}>
+            <AppText style={styles.category}>RC Points To Be Earned</AppText>
+            <View style={{ marginTop: 15, marginLeft: -26 }}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate(routes.POINT)}
+              >
+                <Icon
+                  name="information-outline"
+                  size={28}
+                  backgroundColor={colors.white}
+                  iconColor={colors.grey}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
           <AppText style={styles.title}>20 Points</AppText>
           <AppText style={styles.category}>Transaction Number</AppText>
           <AppText style={styles.title}>#25299</AppText>

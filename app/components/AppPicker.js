@@ -6,8 +6,10 @@ import {
   Modal,
   Button,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
 import AppText from "./AppText";
 import defaultStyles from "../config/styles";
@@ -15,6 +17,7 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import AppScreen from "./AppScreen";
 import PickerItem from "./PickerItem";
 import { Colors } from "react-native/Libraries/NewAppScreen";
+import colors from "../config/colors";
 //import colors from "../config/colors";
 function AppPicker({
   icon,
@@ -53,9 +56,31 @@ function AppPicker({
           />
         </View>
       </TouchableWithoutFeedback>
-      <Modal visible={modalVisible} animationType="slide">
+      <Modal
+        visible={modalVisible}
+        animationType="slide"
+        presentationStyle="formSheet"
+      >
         <AppScreen>
-          <Button title="Close" onPress={() => setModalVisible(false)} />
+          {/* <Button
+            title="Close"
+            onPress={() => setModalVisible(false)}
+            color={colors.danger}
+          /> */}
+          <View
+            style={{
+              marginVertical: 15,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <AntDesign
+              name="closecircleo"
+              size={20}
+              color={defaultStyles.colors.olive}
+              onPress={() => setModalVisible(false)}
+            />
+          </View>
           <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}

@@ -34,7 +34,8 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        //headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
@@ -47,11 +48,12 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        //headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
-  <Stack.Screen
+    <Stack.Screen
       name="AllRewards"
       component={AllRewards}
       options={{
@@ -60,7 +62,7 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
@@ -73,7 +75,7 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        headerBackVisible: false,
+        headerBackTitle: "Back",
       }}
     />
 
