@@ -28,19 +28,7 @@ export default class ImageSlider extends React.Component {
 
   render() {
     return (
-      <SafeAreaView
-        style={{
-          backgroundColor: colors.creme,
-          flex: 1,
-        }}
-      >
-        {/* Content */}
-        <ScrollView
-          style={{
-            backgroundColor: colors.pink,
-            flex: 1,
-          }}
-        >
+      
           <View style={{ width, height }}>
             <ScrollView
               pagingEnabled
@@ -54,7 +42,8 @@ export default class ImageSlider extends React.Component {
             >
               {this.props.images.map((images, index) => (
                 <Image
-                  source={{ require: images }}
+                  key={index}
+                  source={{ uri: images }}
                   style={{
                     width,
                     height,
@@ -88,8 +77,7 @@ export default class ImageSlider extends React.Component {
               ))}
             </View>
           </View>
-        </ScrollView>
-      </SafeAreaView>
+ 
     );
   }
 }

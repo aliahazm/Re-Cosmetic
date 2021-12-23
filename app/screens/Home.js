@@ -12,9 +12,9 @@ import ImageSlider from "../components/ImageSlider";
 import colors from "../config/colors";
 
 const images = [
-  "../assets/adver1.jpg",
-  "../assets/adver2.jpg",
-  "../assets/adver3.jpg",
+  "https://freedesignfile.com/upload/2019/03/Rose-with-cosmetics-advertisement-poster-template-vectors-02.jpg",
+  "https://freedesignfile.com/upload/2018/11/Honey-humectants-cosmetics-poster-template-vector-03.jpg",
+  "https://image.shutterstock.com/image-vector/beauty-make-banner-template-cosmetic-600w-1927734332.jpg"
 ];
 
 const { width } = Dimensions.get("window");

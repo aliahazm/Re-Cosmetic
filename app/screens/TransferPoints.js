@@ -25,7 +25,7 @@ export default class TransferPoints extends Component {
       let balance_amount = this.state.balance;
       let points_transfer = this.state.points;
 
-      balance_amount = -points_transfer;
+      points_transfer = points_transfer/10;
 
       alert(
         "You have transferred RM" +
@@ -102,16 +102,8 @@ export default class TransferPoints extends Component {
             />
 
             <Text>Recipient: </Text>
-            <TextInput
-              style={{
-                height: 40,
-                borderColor: "gray",
-                borderWidth: 1,
-                marginBottom: 20,
-              }}
-              placeholder="Humanitarian Care Malaysia Berhad"
-            />
-
+            <Text style={{fontWeight: 'bold', fontSize: 18, marginTop: 5, marginBottom: 20}}>Humanitarian Care Malaysia Berhad</Text>
+            
             <View style={{ alignItems: "center" }}>
               <PointsButton title="Transfer" onPress={this.transfer} />
             </View>
