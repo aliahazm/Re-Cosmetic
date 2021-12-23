@@ -4,7 +4,7 @@ import RecycleRequest from "../screens/RecycleRequest";
 import colors from "../config/colors";
 import MyRecycleDetails from "../screens/MyRecycleDetails";
 import PointModal from "../components/PointModal";
-
+import Point from "../screens/Point";
 const Stack = createNativeStackNavigator();
 
 const RecycleRequestNavigator = () => (
@@ -32,6 +32,18 @@ const RecycleRequestNavigator = () => (
         headerStyle: { backgroundColor: colors.white },
         //headerShadowVisible: false,
         //headerBackVisible: false,
+      }}
+    />
+    <Stack.Screen
+      name="Point"
+      component={Point}
+      options={{
+        title: "HOW IT WORKS",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        headerShadowVisible: false,
+        headerBackTitle: "Back",
       }}
     />
   </Stack.Navigator>
