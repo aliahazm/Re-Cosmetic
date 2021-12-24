@@ -14,6 +14,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
 import PointsButton from "../components/PointsButton";
+
 function MyPoints({ navigation }) {
   return (
     <SafeAreaView

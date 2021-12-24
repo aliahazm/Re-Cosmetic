@@ -1,4 +1,6 @@
 export default Object.freeze({
+  LOGIN: "Login",
+  SIGNUP: "Signup",
   RECYCLE_REQUEST: "RecycleRequest",
   MY_RECYCLE_DETAILS: "MyRecycleDetails",
   ALL_REWARDS: "AllRewards",
@@ -11,5 +13,6 @@ export default Object.freeze({
   MY_POINTS: "MyPoints",
   WITHDRAW: "Withdraw",
   TRANSFER_POINTS: "TransferPoints",
-  MORE: "More"
+  MORE: "More",
+  APP_NAVIGATOR: "AppNavigator"
 });

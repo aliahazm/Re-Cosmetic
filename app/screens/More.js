@@ -14,9 +14,19 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
-import PointsButton from "../components/PointsButton";
-import styles from "../config/styles";
+import { auth } from "../../firebase";
+
 function More({ navigation }) {
+  
+  const handleSignOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigation.replace(routes.LOGIN);
+      })
+      .catch((error) => alert(error.message));
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -35,11 +45,10 @@ function More({ navigation }) {
           style={{
             flexDirection: "row",
             backgroundColor: colors.lightGreen,
-              padding: 20,
-              paddingTop: 20,
-              borderBottomWidth: 1,
-              borderBottomColor: "#ccc",
-          
+            padding: 20,
+            paddingTop: 20,
+            borderBottomWidth: 1,
+            borderBottomColor: "#ccc",
           }}
         >
           <Image
@@ -61,7 +70,7 @@ function More({ navigation }) {
                 fontWeight: "500",
                 padding: 5,
                 fontSize: 20,
-                color: 'black'
+                color: "black",
               }}
             >
               Alya Sabreena
@@ -72,7 +81,7 @@ function More({ navigation }) {
                 fontWeight: "500",
                 padding: 5,
                 fontSize: 15,
-                color: 'black'
+                color: "black",
               }}
             >
               100pts
@@ -80,7 +89,7 @@ function More({ navigation }) {
           </View>
         </View>
 
-        <View style={{marginTop: 20}}>
+        <View style={{ marginTop: 20 }}>
           <TouchableOpacity
             onPress={() => navigation.navigate(routes.RECYCLE_STEPS)}
             style={style.touchable}
@@ -97,7 +106,7 @@ function More({ navigation }) {
             onPress={() => navigation.navigate(routes.ABOUT_US)}
             style={style.touchable}
           >
-            <View style= {style.option}>
+            <View style={style.option}>
               <Ionicons name="people-outline" size={22} />
               <Text style={{ fontSize: 15, marginLeft: 5, fontWeight: "500" }}>
                 About Us
@@ -126,7 +135,7 @@ function More({ navigation }) {
             }}
           >
             <TouchableOpacity
-              onPress={() => {}}
+              onPress={handleSignOut}
               style={{ paddingVertical: 15, marginBottom: 25 }}
             >
               <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -151,15 +160,14 @@ const style = StyleSheet.create({
     flex: 1,
   },
 
- option: {
-  flexDirection: "row", 
-  alignItems: "center",
-  paddingHorizontal: 20
- },
-  
+  option: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
+
   touchable: {
-    paddingVertical: 20, 
-    
- }
+    paddingVertical: 20,
+  },
 });
 export default More;
