@@ -13,6 +13,7 @@ export default Object.freeze({
   MY_POINTS: "MyPoints",
   WITHDRAW: "Withdraw",
   TRANSFER_POINTS: "TransferPoints",
+  REMINDER: "Reminder",
   MORE: "More",
   APP_NAVIGATOR: "AppNavigator"
 });

@@ -12,6 +12,7 @@ import HomeNavigator from "./HomeNavigator";
 import TermsAndConditionsNavigator from "./TermsAndConditionsNavigator";
 import RecycleRequestNavigator from "./RecycleRequestNavigator";
 import MyPointsNavigator from "./MyPointsNavigator";
+import ReminderNavigator from "./ReminderNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -58,7 +59,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="Reminder"
-      component={TermsAndConditionsNavigator}
+      component={ReminderNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="ios-notifications" color={color} size={size} />

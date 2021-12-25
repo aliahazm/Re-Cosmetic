@@ -9,8 +9,8 @@ export default function App() {
   return (
     <NavigationContainer theme={navigationTheme}>
       {
-        <Login/>
-        //<AppNavigator />
+        //<Login/>
+        <AppNavigator />
       }
     </NavigationContainer>
   );
