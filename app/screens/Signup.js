@@ -49,6 +49,14 @@ const Signup = ({ navigation }) => {
       </View>
 
       <View style={styles.inputContainer}>
+
+      <TextInput
+          placeholder="Name"
+          value={}
+          onChangeText={() => {}}
+          style={styles.input}
+        />
+
         <TextInput
           placeholder="Email"
           value={email}
@@ -57,7 +65,14 @@ const Signup = ({ navigation }) => {
         />
 
         <TextInput
-          placeholder="Password"
+          placeholder="Phone number"
+          value={}
+          onChangeText={() => {}}
+          style={styles.input}
+        />
+
+        <TextInput
+          placeholder="Create Password"
           value={password}
           onChangeText={(text) => setPassword(text)}
           style={styles.input}

@@ -27,13 +27,9 @@ export default class Withdraw extends Component {
       let balance_amount = this.state.balance;
       let points_transfer = this.state.points;
 
-      balance_amount = -points_transfer;
+      points_transfer = points_transfer / 10;
 
-      alert(
-        "You have transferred RM" +
-          points_transfer +
-          " to Humanitarian Care Malaysia Berhad!"
-      );
+      alert("You have withdraw RM" + points_transfer + " !");
     };
   }
 
