@@ -22,6 +22,7 @@ const MoreNavigator = () => (
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
         headerBackVisible: false,
+        headerShown: false,
       }}
     />
 

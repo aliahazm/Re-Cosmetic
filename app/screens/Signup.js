@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   KeyboardAvoidingView,
   StyleSheet,
@@ -9,17 +9,28 @@ import {
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { auth } from "../../firebase";
 import colors from "../config/colors";
+import routes from "../navigation/routes";
 
 const Signup = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigation.navigate(routes.APP_NAVIGATOR);
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
   const handleSignUp = () => {
     auth
-      .createUser(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log(user.email);
+        console.log("Registered with:", user.email);
       })
       .catch((error) => alert(error.message));
   };

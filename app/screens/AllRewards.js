@@ -288,7 +288,7 @@ function AllRewards({ navigation }) {
         <View //Empty
           style={{
             backgroundColor: colors.pink,
-            flex: 0.45,
+            flex: 0.29,
             flexDirection: "row",
             justifyContent: "center",
             marginHorizontal: 25,

@@ -15,9 +15,9 @@ import { Ionicons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
 import { auth } from "../../firebase";
+import AppText from "../components/AppText";
 
 function More({ navigation }) {
-  
   const handleSignOut = () => {
     auth
       .signOut()
@@ -30,12 +30,12 @@ function More({ navigation }) {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: colors.creme,
+        backgroundColor: colors.olive,
         flex: 1,
       }}
     >
       {/* Content */}
-      <ScrollView
+      <View
         style={{
           backgroundColor: colors.pink,
           flex: 1,
@@ -44,7 +44,7 @@ function More({ navigation }) {
         <View
           style={{
             flexDirection: "row",
-            backgroundColor: colors.lightGreen,
+            backgroundColor: colors.olive,
             padding: 20,
             paddingTop: 20,
             borderBottomWidth: 1,
@@ -58,34 +58,34 @@ function More({ navigation }) {
               width: 100,
               borderRadius: 90,
               borderWidth: 0.5,
-              borderColor: colors.olive,
+              borderColor: colors.grey,
               margin: 20,
             }}
           />
 
           <View style={{ marginTop: 40 }}>
-            <Text
+            <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "500",
                 padding: 5,
                 fontSize: 20,
-                color: "black",
+                color: colors.white,
               }}
             >
               Alya Sabreena
-            </Text>
+            </AppText>
 
-            <Text
+            <AppText
               style={{
                 fontWeight: "500",
                 padding: 5,
                 fontSize: 15,
-                color: "black",
+                color: colors.white,
               }}
             >
-              100pts
-            </Text>
+              100 points
+            </AppText>
           </View>
         </View>
 
@@ -95,10 +95,21 @@ function More({ navigation }) {
             style={style.touchable}
           >
             <View style={style.option}>
-              <Ionicons name="information-outline" size={22} />
-              <Text style={{ fontSize: 15, marginLeft: 5, fontWeight: "500" }}>
+              <Ionicons
+                name="information-outline"
+                size={22}
+                color={colors.darkGrey}
+              />
+              <AppText
+                style={{
+                  fontSize: 15,
+                  marginLeft: 5,
+                  fontWeight: "500",
+                  color: colors.darkGrey,
+                }}
+              >
                 How It Works
-              </Text>
+              </AppText>
             </View>
           </TouchableOpacity>
 
@@ -107,10 +118,21 @@ function More({ navigation }) {
             style={style.touchable}
           >
             <View style={style.option}>
-              <Ionicons name="people-outline" size={22} />
-              <Text style={{ fontSize: 15, marginLeft: 5, fontWeight: "500" }}>
+              <Ionicons
+                name="people-outline"
+                size={22}
+                color={colors.darkGrey}
+              />
+              <AppText
+                style={{
+                  fontSize: 15,
+                  marginLeft: 5,
+                  fontWeight: "500",
+                  color: colors.darkGrey,
+                }}
+              >
                 About Us
-              </Text>
+              </AppText>
             </View>
           </TouchableOpacity>
 
@@ -119,10 +141,21 @@ function More({ navigation }) {
             style={style.touchable}
           >
             <View style={style.option}>
-              <Ionicons name="reader-outline" size={22} />
-              <Text style={{ fontSize: 15, marginLeft: 5, fontWeight: "500" }}>
+              <Ionicons
+                name="reader-outline"
+                size={22}
+                color={colors.darkGrey}
+              />
+              <AppText
+                style={{
+                  fontSize: 15,
+                  marginLeft: 5,
+                  fontWeight: "500",
+                  color: colors.darkGrey,
+                }}
+              >
                 Terms and Conditions
-              </Text>
+              </AppText>
             </View>
           </TouchableOpacity>
 
@@ -131,25 +164,38 @@ function More({ navigation }) {
               padding: 20,
               paddingTop: 5,
               borderTopWidth: 1,
-              borderTopColor: "#ccc",
+              borderTopColor: colors.grey,
             }}
           >
-            <TouchableOpacity
+            {/* <TouchableOpacity
               onPress={handleSignOut}
+              style={{ paddingVertical: 15, marginBottom: 25 }}
+            > */}
+            <TouchableOpacity
+              onPress={() => navigation.navigate(routes.LOGIN)}
               style={{ paddingVertical: 15, marginBottom: 25 }}
             >
               <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Ionicons name="exit-outline" size={22} />
-                <Text
-                  style={{ fontSize: 15, marginLeft: 5, fontWeight: "500" }}
+                <Ionicons
+                  name="exit-outline"
+                  size={22}
+                  color={colors.darkGrey}
+                />
+                <AppText
+                  style={{
+                    fontSize: 15,
+                    marginLeft: 5,
+                    fontWeight: "500",
+                    color: colors.darkGrey,
+                  }}
                 >
                   Logout
-                </Text>
+                </AppText>
               </View>
             </TouchableOpacity>
           </View>
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -164,6 +210,8 @@ const style = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 20,
+    //backgroundColor: colors.white,
+    //height: 40,
   },
 
   touchable: {

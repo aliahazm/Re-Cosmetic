@@ -13,11 +13,26 @@ import TermsAndConditionsNavigator from "./TermsAndConditionsNavigator";
 import RecycleRequestNavigator from "./RecycleRequestNavigator";
 import MyPointsNavigator from "./MyPointsNavigator";
 import ReminderNavigator from "./ReminderNavigator";
+import Login from "../screens/Login";
+import Signup from "../screens/Signup";
+import AuthNavigator from "./AuthNavigator";
 
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator>
+    <Tab.Screen
+      name="Login"
+      component={AuthNavigator}
+      options={{
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+        headerShown: false,
+        tabBarStyle: { display: "none" },
+        tabBarButton: (props) => null,
+      }}
+    />
     <Tab.Screen
       name="Home"
       component={HomeNavigator}

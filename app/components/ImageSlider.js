@@ -28,56 +28,54 @@ export default class ImageSlider extends React.Component {
 
   render() {
     return (
-      
-          <View style={{ width, height }}>
-            <ScrollView
-              pagingEnabled
-              horizontal
-              onScroll={this.change}
-              showsHorizontalScrollIndicator={false}
+      <View style={{ width, height }}>
+        <ScrollView
+          pagingEnabled
+          horizontal
+          onScroll={this.change}
+          showsHorizontalScrollIndicator={false}
+          style={{
+            width,
+            height,
+          }}
+        >
+          {this.props.images.map((images, index) => (
+            <Image
+              key={index}
+              source={{ uri: images }}
               style={{
                 width,
                 height,
+                resizeMode: "cover",
               }}
+            />
+          ))}
+        </ScrollView>
+        <View
+          style={{
+            flexDirection: "row",
+            position: "absolute",
+            bottom: 0,
+            alignSelf: "center",
+          }}
+        >
+          {this.props.images.map((i, k) => (
+            <Text
+              key={k}
+              style={
+                k == this.state.active
+                  ? {
+                      color: colors.olive,
+                      margin: 3,
+                    }
+                  : { color: colors.white, margin: 3 }
+              }
             >
-              {this.props.images.map((images, index) => (
-                <Image
-                  key={index}
-                  source={{ uri: images }}
-                  style={{
-                    width,
-                    height,
-                    resizeMode: "cover",
-                  }}
-                />
-              ))}
-            </ScrollView>
-            <View
-              style={{
-                flexDirection: "row",
-                position: "absolute",
-                bottom: 0,
-                alignSelf: "center",
-              }}
-            >
-              {this.props.images.map((i, k) => (
-                <Text
-                  key={k}
-                  style={
-                    k == this.state.active
-                      ? {
-                          color: "#888",
-                          margin: 3,
-                        }
-                      : { color: "#fff", margin: 3 }
-                  }
-                >
-                  ⬤
-                </Text>
-              ))}
-            </View>
-          </View>
- 
+              ⬤
+            </Text>
+          ))}
+        </View>
+      </View>
     );
   }
 }

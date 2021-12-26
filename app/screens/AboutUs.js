@@ -12,6 +12,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
+import AppText from "../components/AppText";
 function AboutUs(props) {
   return (
     <SafeAreaView
@@ -29,7 +30,7 @@ function AboutUs(props) {
       >
         <Image style={styles.image} source={require("../assets/Logo.png")} />
 
-        <Text style={styles.about}>
+        <AppText style={styles.about}>
           RC here is representing the combination of 'Recycle' and 'Cosmetic',
           which hence produced 'Re-cosmetic' as our application name, is a
           mobile platform to recycle cosmetic containers specifically made of
@@ -57,7 +58,7 @@ function AboutUs(props) {
           having personalized reminder system to remind on recycle appointments
           set, they are all ready to use on-the-go!{"\n"}
           {"\n"}
-        </Text>
+        </AppText>
       </ScrollView>
     </SafeAreaView>
   );
@@ -93,10 +94,11 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    marginVertical: -20,
-    marginHorizontal: 60,
-    width: 300,
-    height: 300,
+    marginTop: 50,
+    marginBottom: 35,
+    marginHorizontal: 110,
+    width: 200,
+    height: 200,
     justifyContent: "center",
     alignItems: "center",
   },

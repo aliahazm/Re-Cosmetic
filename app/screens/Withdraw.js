@@ -11,7 +11,9 @@ import {
 } from "react-native";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
+import AppText from "../components/AppText";
 import PointsButton from "../components/PointsButton";
+import AppTextInput from "../components/AppTextInput";
 
 export default class Withdraw extends Component {
   constructor() {
@@ -44,7 +46,7 @@ export default class Withdraw extends Component {
         }}
       >
         {/* Content */}
-        <ScrollView
+        <View
           style={{
             backgroundColor: colors.pink,
             flex: 1,
@@ -59,12 +61,12 @@ export default class Withdraw extends Component {
                 borderRadius: 90,
                 borderWidth: 0.5,
                 borderColor: colors.olive,
-                marginBottom: 10,
+                marginBottom: 20,
                 marginTop: 40,
                 alignSelf: "center",
               }}
             />
-            <Text
+            <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "500",
@@ -73,8 +75,8 @@ export default class Withdraw extends Component {
               }}
             >
               Current Points
-            </Text>
-            <Text
+            </AppText>
+            <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "700",
@@ -85,36 +87,46 @@ export default class Withdraw extends Component {
               }}
             >
               {this.state.balance}
-            </Text>
+            </AppText>
           </View>
 
           <View style={{ margin: 20 }}>
-            <Text>Points: </Text>
+            <AppText style={styles.title}>Points: </AppText>
             <TextInput
               style={{
-                height: 40,
-                borderColor: "gray",
+                height: 50,
+                borderColor: colors.white,
+                borderRadius: 10,
                 borderWidth: 1,
                 marginBottom: 20,
+                marginHorizontal: 15,
+                backgroundColor: colors.white,
+                paddingVertical: 10,
+                paddingHorizontal: 15,
               }}
               onChangeText={(points) => this.setState({ points })}
               keyboardType="numeric"
             />
 
-            <Text>Total (RM): </Text>
+            <AppText style={styles.title}>Total (RM): </AppText>
             <TextInput
               style={{
-                height: 40,
-                borderColor: "gray",
+                height: 50,
+                borderColor: colors.white,
+                borderRadius: 10,
                 borderWidth: 1,
                 marginBottom: 20,
+                marginHorizontal: 15,
+                backgroundColor: colors.white,
+                paddingVertical: 10,
+                paddingHorizontal: 15,
               }}
             />
             <View style={{ alignItems: "center" }}>
               <PointsButton title="Withdraw" onPress={this.withdraw} />
             </View>
           </View>
-        </ScrollView>
+        </View>
       </SafeAreaView>
     );
   }
@@ -167,5 +179,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     textAlign: "justify",
     lineHeight: 19,
+  },
+
+  title: {
+    color: colors.grey,
+    fontSize: 16,
+    fontWeight: "bold",
+    marginHorizontal: 15,
+    marginVertical: 10,
+    justifyContent: "center",
+    textAlign: "justify",
+    //lineHeight: 19,
   },
 });

@@ -14,6 +14,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
 import PointsButton from "../components/PointsButton";
+import AppText from "../components/AppText";
 
 function MyPoints({ navigation }) {
   return (
@@ -49,7 +50,7 @@ function MyPoints({ navigation }) {
                 alignSelf: "center",
               }}
             />
-            <Text
+            <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "500",
@@ -58,8 +59,8 @@ function MyPoints({ navigation }) {
               }}
             >
               Current Points
-            </Text>
-            <Text
+            </AppText>
+            <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "700",
@@ -69,8 +70,8 @@ function MyPoints({ navigation }) {
                 marginBottom: 20,
               }}
             >
-              100 pts
-            </Text>
+              100
+            </AppText>
           </View>
 
           <View

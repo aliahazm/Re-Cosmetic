@@ -3,16 +3,31 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import colors from "../config/colors";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
+import Signup from "../screens/Signup";
 
 const Stack = createNativeStackNavigator();
 
-const HomeNavigator = () => (
+const AuthNavigator = () => (
   <Stack.Navigator presentation="modal" animationTypeForReplace="pop">
     <Stack.Screen
-      name="Home"
-      component={Home}
+      name="Login"
+      component={Login}
       options={{
-        title: "HOME",
+        title: "Login",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        //headerShadowVisible: false,
+        headerShown: false,
+        headerBackVisible: false,
+      }}
+    />
+
+    <Stack.Screen
+      name="Signup"
+      component={Signup}
+      options={{
+        title: "Signup",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
@@ -24,4 +39,4 @@ const HomeNavigator = () => (
   </Stack.Navigator>
 );
 
-export default HomeNavigator;
+export default AuthNavigator;

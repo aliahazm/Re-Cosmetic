@@ -7,14 +7,18 @@ import {
   StyleSheet,
   View,
   Text,
+  TouchableOpacity,
 } from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import AppText from "../components/AppText";
 import ImageSlider from "../components/ImageSlider";
 import colors from "../config/colors";
+import routes from "../navigation/routes";
 
 const images = [
   "https://freedesignfile.com/upload/2019/03/Rose-with-cosmetics-advertisement-poster-template-vectors-02.jpg",
   "https://freedesignfile.com/upload/2018/11/Honey-humectants-cosmetics-poster-template-vector-03.jpg",
-  "https://image.shutterstock.com/image-vector/beauty-make-banner-template-cosmetic-600w-1927734332.jpg"
+  "https://image.shutterstock.com/image-vector/beauty-make-banner-template-cosmetic-600w-1927734332.jpg",
 ];
 
 const { width } = Dimensions.get("window");
@@ -24,23 +28,22 @@ function Home({ navigation }) {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: colors.creme,
+        backgroundColor: colors.pink,
         flex: 1,
       }}
     >
       {/* Content */}
       <ScrollView
-      style={{
-        backgroundColor: colors.creme,
-        flex: 1,
-      }}
+        style={{
+          backgroundColor: colors.pink,
+          flex: 1,
+        }}
       >
         <View
           style={{
             flexDirection: "row",
             paddingTop: 50,
             paddingBottom: 50,
-            
           }}
         >
           <Image
@@ -67,18 +70,17 @@ function Home({ navigation }) {
             >
               ━━━━━━━━
             </Text>
-            <Text
+            <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "600",
                 padding: 5,
-                fontSize: 25,
+                fontSize: 22,
                 color: "#6A7D5A",
-                fontFamily: "Times New Roman",
               }}
             >
               HELLO, BEAUTIFUL!
-            </Text>
+            </AppText>
 
             <Text
               style={{
@@ -96,29 +98,28 @@ function Home({ navigation }) {
 
         <ImageSlider images={images} />
 
-        <ScrollView>
-          <Text
-            style={{
-              fontSize: 20,
-              padding: 20,
-              marginTop: 30,
-              alignSelf: "center",
-              fontFamily: "Times New Roman",
-              color: colors.olive,
-            }}
-          >
-            UPCOMING EVENTS
-          </Text>
+        <AppText
+          style={{
+            fontSize: 20,
+            padding: 20,
+            marginTop: 30,
+            alignSelf: "center",
+            fontWeight: "bold",
+            color: colors.olive,
+          }}
+        >
+          UPCOMING EVENTS
+        </AppText>
 
-          <Image
-            source={require("../assets/event2.jpg")}
-            style={{ height, width }}
-          />
-          <Image
-            source={require("../assets/event1.jpg")}
-            style={{ height: 300, width }}
-          />
-        </ScrollView>
+        <Image
+          source={require("../assets/event2.jpg")}
+          style={{ height, width }}
+        />
+
+        <Image
+          source={require("../assets/event1.jpg")}
+          style={{ height: 300, width }}
+        />
       </ScrollView>
     </SafeAreaView>
   );

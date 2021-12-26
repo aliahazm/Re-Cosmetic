@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+//import { useNavigation } from "@react-navigation/core";
+import React, { useState, useEffect } from "react";
 import {
   KeyboardAvoidingView,
   StyleSheet,
@@ -8,6 +9,7 @@ import {
 } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { auth } from "../../firebase";
+import AppButton4 from "../components/AppButton4";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
 
@@ -15,22 +17,34 @@ const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //const navigation = useNavigation();
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace(routes.APP_NAVIGATOR);
+        navigation.navigate(routes.APP_NAVIGATOR);
       }
     });
 
     return unsubscribe;
   }, []);
 
+  const handleSignUp = () => {
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log("Registered with:", user.email);
+      })
+      .catch((error) => alert(error.message));
+  };
+
   const handleLogin = () => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log("logged in with:", user.email);
+        console.log("Logged in with:", user.email);
       })
       .catch((error) => alert(error.message));
   };
@@ -66,14 +80,24 @@ const Login = ({ navigation }) => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleLogin} style={styles.button}>
+        {/* <TouchableOpacity onPress={handleLogin} style={styles.button}>
+          <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity> */}
+        <TouchableOpacity
+          onPress={() => navigation.navigate(routes.HOME)}
+          style={styles.button}
+        >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
 
+        {/* <TouchableOpacity onPress={handleSignUp}>
+          <Text>Not a user? Sign up here!</Text>
+        </TouchableOpacity> */}
         <TouchableOpacity onPress={() => navigation.navigate(routes.SIGNUP)}>
           <Text>Not a user? Sign up here!</Text>
         </TouchableOpacity>
       </View>
+      {/* <AppButton4 onPress={() => navigation.navigate(routes.HOME)} /> */}
     </KeyboardAvoidingView>
   );
 };

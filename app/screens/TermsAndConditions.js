@@ -4,6 +4,7 @@ import { ScrollView, SafeAreaView, StyleSheet, Text } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
+import AppText from "../components/AppText";
 function TermsAndConditions(props) {
   return (
     <SafeAreaView
@@ -19,9 +20,9 @@ function TermsAndConditions(props) {
           flex: 1,
         }}
       >
-        <Text style={styles.serviceTitle}>{"\n"}RE-COSMETIC SERVICE</Text>
+        <AppText style={styles.serviceTitle}>{"\n"}RE-COSMETIC SERVICE</AppText>
 
-        <Text style={styles.tnc}>
+        <AppText style={styles.tnc}>
           {"\n"}1. INTRODUCTION {"\n"}
           {"\n"}1.1 Welcome to the Re-cosmetic application (“the App”). Please
           read the following terms and conditions (“Terms and Conditions”
@@ -158,7 +159,7 @@ function TermsAndConditions(props) {
           {"\n"}12. GOVERNING LAW{"\n"}
           {"\n"}12.1. These Terms and Conditions shall be governed by and
           construed in accordance to the laws of Malaysia.{"\n"}
-        </Text>
+        </AppText>
       </ScrollView>
     </SafeAreaView>
   );
