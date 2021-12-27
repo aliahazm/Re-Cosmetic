@@ -10,6 +10,7 @@ import {
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { auth } from "../../firebase";
 import AppButton4 from "../components/AppButton4";
+import AppText from "../components/AppText";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
 
@@ -87,14 +88,16 @@ const Login = ({ navigation }) => {
           onPress={() => navigation.navigate(routes.HOME)}
           style={styles.button}
         >
-          <Text style={styles.buttonText}>Login</Text>
+          <AppText style={styles.buttonText}>LOGIN</AppText>
         </TouchableOpacity>
 
         {/* <TouchableOpacity onPress={handleSignUp}>
           <Text>Not a user? Sign up here!</Text>
         </TouchableOpacity> */}
         <TouchableOpacity onPress={() => navigation.navigate(routes.SIGNUP)}>
-          <Text>Not a user? Sign up here!</Text>
+          <AppText style={{ fontSize: 12, fontWeight: "bold" }}>
+            Not a user? Sign up here!
+          </AppText>
         </TouchableOpacity>
       </View>
       {/* <AppButton4 onPress={() => navigation.navigate(routes.HOME)} /> */}
@@ -121,6 +124,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     marginTop: 10,
+    //borderRadius: 50,
   },
 
   buttonContainer: {

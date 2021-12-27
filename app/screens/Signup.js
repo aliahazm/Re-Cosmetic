@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import { auth } from "../../firebase";
+import AppText from "../components/AppText";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
 
@@ -49,10 +50,9 @@ const Signup = ({ navigation }) => {
       </View>
 
       <View style={styles.inputContainer}>
-
-      <TextInput
+        <TextInput
           placeholder="Name"
-          value={}
+          //value={string}
           onChangeText={() => {}}
           style={styles.input}
         />
@@ -66,7 +66,7 @@ const Signup = ({ navigation }) => {
 
         <TextInput
           placeholder="Phone number"
-          value={}
+          //value={string}
           onChangeText={() => {}}
           style={styles.input}
         />
@@ -82,11 +82,13 @@ const Signup = ({ navigation }) => {
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleSignUp} style={styles.button}>
-          <Text style={styles.buttonText}>Sign Up</Text>
+          <AppText style={styles.buttonText}>SIGN UP</AppText>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigation.navigate(routes.LOGIN)}>
-          <Text>Back to Login</Text>
+          <AppText style={{ fontSize: 12, fontWeight: "bold" }}>
+            Back to Login
+          </AppText>
         </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 10,
     marginTop: 10,
+    //borderRadius: 50,
   },
 
   buttonContainer: {

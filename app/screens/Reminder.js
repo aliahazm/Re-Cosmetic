@@ -30,7 +30,7 @@ function Reminder({ navigation }) {
           flex: 1,
         }}
       >
-        <View style={{ marginVertical: 20, marginHorizontal: 50 }}>
+        <View style={{ marginVertical: 20, marginHorizontal: 30 }}>
           <ReminderCard
             date="31-12-2021 Friday"
             outlet="Outlet: MiliandRose"
