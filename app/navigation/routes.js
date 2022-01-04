@@ -17,4 +17,5 @@ export default Object.freeze({
   REMINDER: "Reminder",
   MORE: "More",
   APP_NAVIGATOR: "AppNavigator",
+  CHANGE_PASSWORD: "ChangePassword"
 });
