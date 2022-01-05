@@ -25,14 +25,13 @@ import OutletPickerItem from "../components/OutletPickerItem";
 import DatePickerModal2 from "../components/DatePickerModal2";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import PointModal from "../components/PointModal";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import ItemCounter from "../components/ItemCounter";
 
 import routes from "../navigation/routes";
 import AppButton3 from "../components/AppButton3";
+import AppButton2 from "../components/AppButton2";
 
 const validationSchema = Yup.object().shape({
-  //date: Yup.array().min(1, "Please select date."),
   brand: Yup.object().required().nullable().label("Brand"),
   outlet: Yup.object().required().nullable().label("Outlet"),
   recyclableItem: Yup.object().required().nullable().label("Recyclable Item"),
@@ -364,6 +363,7 @@ function RecycleRequest({ navigation }) {
               <ItemCounter />
 
               <SubmitButton title="SUBMIT" />
+
               <View style={{ flexDirection: "row" }}>
                 <PointModal />
                 <AppButton3

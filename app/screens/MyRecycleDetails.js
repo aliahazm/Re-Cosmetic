@@ -15,20 +15,16 @@ import {
 import routes from "../navigation/routes";
 import Icon from "../components/Icon";
 import AppButton from "../components/AppButton";
-import { MaterialIcons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
 function MyRecycleDetails({ navigation }) {
   return (
-    //Header: My Recycle Details
     <SafeAreaView
       style={{
         backgroundColor: colors.creme,
         flex: 1,
       }}
     >
-      {/* Content */}
       <View
         style={{
           backgroundColor: colors.pink,
@@ -44,9 +40,7 @@ function MyRecycleDetails({ navigation }) {
             width: "90%",
             height: 120,
             borderColor: colors.grey,
-            //borderWidth: 1,
             borderRadius: 25,
-            //marginRight: 10,
             alignItems: "center",
             justifyContent: "center",
             marginBottom: 20,
@@ -75,14 +69,9 @@ function MyRecycleDetails({ navigation }) {
             width: "90%",
             height: 120,
             borderColor: colors.grey,
-            //borderWidth: 1,
             borderRadius: 25,
-            //marginRight: 10,
-            //marginTop: 20,
-            //paddingTop: 20,
             alignItems: "flex-start",
             justifyContent: "flex-start",
-            //marginBottom: 20,
             shadowColor: "#000",
             shadowOffset: {
               width: 0,

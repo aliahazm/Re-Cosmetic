@@ -2,10 +2,9 @@ import React, { Component, useState } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 import DatePicker from "react-native-datepicker";
 import moment from "moment";
-import colors from "../config/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+
+import colors from "../config/colors";
 
 export default class MyDatePicker extends Component {
   constructor(props) {
@@ -77,14 +76,6 @@ export default class MyDatePicker extends Component {
               marginLeft: -50,
               fontWeight: "500",
             },
-
-            // datePickerCon: {
-            //   backgroundColor: colors.creme,
-
-            //   //   //alignItems: "center",
-            //   //   //justifyContent: "center",
-            //   //   width: "100%",
-            // },
           }}
           onDateChange={(date) => {
             this.setState({ date: date });

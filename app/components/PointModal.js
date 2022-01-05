@@ -59,26 +59,6 @@ export default class PointModal extends Component {
 
   renderModalContent = () => (
     <View style={styles.modalBox}>
-      {/* <View
-        style={{
-          marginTop: 15,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <AntDesign
-          name="closecircleo"
-          size={20}
-          color={colors.grey}
-          onPress={() => setModalVisible(false)}
-        />
-        <Button
-          title="Cancel"
-           onPress={() => setVisibleModal(false)}
-          color={colors.grey}
-        />
-      </View> */}
-
       <View style={styles.modalContent}>
         <View
           style={{
