@@ -159,6 +159,29 @@ function More({ navigation }) {
             </View>
           </TouchableOpacity>
 
+          <TouchableOpacity
+            onPress={() => navigation.navigate(routes.CHANGE_PASSWORD)}
+            style={style.touchable}
+          >
+            <View style={style.option}>
+              <Ionicons
+                name="keypad-outline"
+                size={22}
+                color={colors.darkGrey}
+              />
+              <AppText
+                style={{
+                  fontSize: 15,
+                  marginLeft: 5,
+                  fontWeight: "500",
+                  color: colors.darkGrey,
+                }}
+              >
+                Change Password
+              </AppText>
+            </View>
+          </TouchableOpacity>
+
           <View
             style={{
               padding: 20,

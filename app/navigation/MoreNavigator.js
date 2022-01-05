@@ -7,6 +7,7 @@ import colors from "../config/colors";
 import More from "../screens/More";
 import AboutUs from "../screens/AboutUs";
 import TermsAndConditions from "../screens/TermsAndConditions";
+import ChangePassword from "../screens/ChangePassword";
 
 const Stack = createNativeStackNavigator();
 
@@ -71,6 +72,19 @@ const MoreNavigator = () => (
       component={TermsAndConditions}
       options={{
         title: "TERMS & CONDITIONS",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        headerShadowVisible: false,
+        headerBackTitle: "Back",
+      }}
+    />
+
+    <Stack.Screen
+      name="ChangePassword"
+      component={ChangePassword}
+      options={{
+        title: "Password",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
