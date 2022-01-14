@@ -17,9 +17,6 @@ export default Object.freeze({
   REMINDER: "Reminder",
   MORE: "More",
   APP_NAVIGATOR: "AppNavigator",
-<<<<<<< HEAD
   POINT_MODAL: "PointModal",
-=======
-  CHANGE_PASSWORD: "ChangePassword"
->>>>>>> c971f28da464a1d87d1e199fa00302d96724d631
+  CHANGE_PASSWORD: "ChangePassword",
 });
