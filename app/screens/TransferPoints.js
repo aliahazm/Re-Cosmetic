@@ -19,21 +19,19 @@ export default class TransferPoints extends Component {
     super();
     this.state = {
       points: 0,
-      balance: 100,
-    };
+      balance: 100
+    }
+  }
 
-    this.transfer = () => {
-      let balance_amount = this.state.balance;
-      let points_transfer = this.state.points;
+  transfer = () => {
+    this.setState({
+      points: this.state.points,
+      balance: this.state.balance - this.state.points
+    })
 
-      points_transfer = points_transfer / 10;
+    let total_transfer = this.state.points/10;
 
-      alert(
-        "You have transferred RM" +
-          points_transfer +
-          " to Humanitarian Care Malaysia Berhad!"
-      );
-    };
+    alert("You have transferred RM" + total_transfer + " to Humanitarian Care Malaysia Berhad!")
   }
 
   render() {
@@ -93,14 +91,14 @@ export default class TransferPoints extends Component {
             <AppText style={styles.title}>Points: </AppText>
             <TextInput
               style={{
-                height: 50,
+                height: 40,
                 borderColor: colors.white,
                 borderRadius: 10,
                 borderWidth: 1,
                 marginBottom: 20,
                 marginHorizontal: 15,
                 backgroundColor: colors.white,
-                paddingVertical: 10,
+                paddingVertical: 5,
                 paddingHorizontal: 15,
               }}
               onChangeText={(points) => this.setState({ points })}

@@ -21,16 +21,19 @@ export default class Withdraw extends Component {
     this.state = {
       points: 0,
       balance: 100,
-    };
+      total: 0
+    }
+  }
 
-    this.withdraw = () => {
-      let balance_amount = this.state.balance;
-      let points_transfer = this.state.points;
+  withdraw = () => {
+    this.setState({
+      balance: this.state.balance - this.state.points,
+      total: this.state.points/10
+    })
 
-      points_transfer = points_transfer / 10;
+    let total_withdraw = this.state.points/10;
 
-      alert("You have withdraw RM" + points_transfer + " !");
-    };
+    alert("You have withdrawn RM" +  total_withdraw)
   }
 
   render() {
@@ -42,7 +45,7 @@ export default class Withdraw extends Component {
         }}
       >
         {/* Content */}
-        <View
+        <ScrollView
           style={{
             backgroundColor: colors.pink,
             flex: 1,
@@ -90,39 +93,27 @@ export default class Withdraw extends Component {
             <AppText style={styles.title}>Points: </AppText>
             <TextInput
               style={{
-                height: 50,
+                height: 40,
                 borderColor: colors.white,
                 borderRadius: 10,
                 borderWidth: 1,
                 marginBottom: 20,
                 marginHorizontal: 15,
                 backgroundColor: colors.white,
-                paddingVertical: 10,
+                paddingVertical: 5,
                 paddingHorizontal: 15,
               }}
               onChangeText={(points) => this.setState({ points })}
               keyboardType="numeric"
             />
 
-            <AppText style={styles.title}>Total (RM): </AppText>
-            <TextInput
-              style={{
-                height: 50,
-                borderColor: colors.white,
-                borderRadius: 10,
-                borderWidth: 1,
-                marginBottom: 20,
-                marginHorizontal: 15,
-                backgroundColor: colors.white,
-                paddingVertical: 10,
-                paddingHorizontal: 15,
-              }}
-            />
+            <AppText style={styles.title}>Total (RM): {this.state.total}</AppText>
+            
             <View style={{ alignItems: "center" }}>
               <PointsButton title="Withdraw" onPress={this.withdraw} />
             </View>
           </View>
-        </View>
+        </ScrollView>
       </SafeAreaView>
     );
   }
