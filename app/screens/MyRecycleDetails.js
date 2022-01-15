@@ -84,7 +84,7 @@ function MyRecycleDetails({ navigation }) {
           }}
         >
           <AppText style={styles.category}>Name</AppText>
-          <AppText style={styles.title}>Noor Aleeya Sabreena</AppText>
+          <AppText style={styles.title}>Aleeya Sabreena</AppText>
           <AppText style={styles.category}>Recycle Item</AppText>
           <AppText style={styles.title}>
             2x MiliandRose Liquid Matte Container

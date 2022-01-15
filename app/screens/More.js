@@ -73,7 +73,7 @@ function More({ navigation }) {
                 color: colors.white,
               }}
             >
-              Alya Sabreena
+              Aleeya Sabreena
             </AppText>
 
             <AppText
