@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  KeyboardAvoidingView,
-  StyleSheet,
-  View,
-  Alert,
-} from "react-native";
+import { KeyboardAvoidingView, StyleSheet, View, Alert } from "react-native";
 import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
@@ -47,13 +42,16 @@ export default class ChangePassword extends Component {
   };
 
   render() {
+    var password;
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding">
         <View style={styles.inputContainer}>
           <TextInput
             placeholder="Current Password"
             value={password}
-            onChangeText={(text) => {this.setState({currentPassword: text})}}
+            onChangeText={(text) => {
+              this.setState({ currentPassword: text });
+            }}
             style={styles.input}
             secureTextEntry
           />
@@ -61,15 +59,20 @@ export default class ChangePassword extends Component {
           <TextInput
             placeholder="New Password"
             value={password}
-            onChangeText={(text) => {this.setState({newPassword: text})}}
+            onChangeText={(text) => {
+              this.setState({ newPassword: text });
+            }}
             style={styles.input}
             secureTextEntry
           />
         </View>
 
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={this.onChangePasswordPress} style={styles.button}>
-            <AppText style={styles.buttonText}>Change Password</AppText>
+          <TouchableOpacity
+            onPress={this.onChangePasswordPress}
+            style={styles.button}
+          >
+            <AppText style={styles.buttonText}>CONFIRM</AppText>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
@@ -98,7 +101,7 @@ const styles = StyleSheet.create({
   },
 
   buttonContainer: {
-    width: "60%",
+    width: "100%",
     justifyContent: "center",
     alignItems: "center",
     marginTop: 40,
@@ -106,9 +109,9 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: colors.olive,
-    width: 155,
+    width: "100%",
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 30,
     marginBottom: 10,
     alignItems: "center",
   },
