@@ -10,15 +10,16 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import DisplayName from "../../components/DisplayName";
 import AppText from "../components/AppText";
 import ImageSlider from "../components/ImageSlider";
 import colors from "../config/colors";
 import routes from "../navigation/routes";
 
 const images = [
-  "https://freedesignfile.com/upload/2019/03/Rose-with-cosmetics-advertisement-poster-template-vectors-02.jpg",
+  "https://c.neh.tw/thumb/f/720/cbf20c51c65b4950afdc.jpg",
   "https://freedesignfile.com/upload/2018/11/Honey-humectants-cosmetics-poster-template-vector-03.jpg",
-  "https://image.shutterstock.com/image-vector/beauty-make-banner-template-cosmetic-600w-1927734332.jpg",
+  "https://c.neh.tw/thumb/f/720/3947d7b2fd944e39a1c0.jpg",
 ];
 
 const { width } = Dimensions.get("window");
@@ -70,7 +71,8 @@ function Home({ navigation }) {
             >
               ━━━━━━━━
             </Text>
-            <AppText
+            <DisplayName/>
+            {/* <AppText
               style={{
                 alignSelf: "center",
                 fontWeight: "600",
@@ -80,7 +82,7 @@ function Home({ navigation }) {
               }}
             >
               HELLO, BEAUTIFUL!
-            </AppText>
+            </AppText> */}
 
             <Text
               style={{

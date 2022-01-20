@@ -14,7 +14,7 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
-import { auth } from "../../firebase";
+import { auth } from "../../Database/firebase";
 import AppText from "../components/AppText";
 
 function More({ navigation }) {

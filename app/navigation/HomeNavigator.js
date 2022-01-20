@@ -2,7 +2,6 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import colors from "../config/colors";
 import Home from "../screens/Home";
-import Login from "../screens/Login";
 
 const Stack = createNativeStackNavigator();
 
