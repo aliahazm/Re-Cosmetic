@@ -55,11 +55,11 @@ function Home({ navigation }) {
               borderRadius: 90,
               borderWidth: 0.5,
               borderColor: colors.olive,
-              marginLeft: 30,
+              marginLeft: 50,
             }}
           />
 
-          <View style={{ marginLeft: 20 }}>
+          <View style={{ marginLeft: 15 }}>
             <Text
               style={{
                 alignSelf: "center",
@@ -71,19 +71,7 @@ function Home({ navigation }) {
             >
               ━━━━━━━━
             </Text>
-            <DisplayName/>
-            {/* <AppText
-              style={{
-                alignSelf: "center",
-                fontWeight: "600",
-                padding: 5,
-                fontSize: 22,
-                color: "#6A7D5A",
-              }}
-            >
-              HELLO, BEAUTIFUL!
-            </AppText> */}
-
+            <DisplayName />
             <Text
               style={{
                 alignSelf: "center",
@@ -113,15 +101,17 @@ function Home({ navigation }) {
           UPCOMING EVENTS
         </AppText>
 
-        <Image
-          source={require("../assets/event2.jpg")}
-          style={{ height, width }}
-        />
+        <View>
+          <Image
+            source={require("../assets/event2.jpg")}
+            style={{ height, width, borderRadius: 30, marginBottom: 10 }}
+          />
 
-        <Image
-          source={require("../assets/event1.jpg")}
-          style={{ height: 300, width }}
-        />
+          <Image
+            source={require("../assets/event1.jpg")}
+            style={{ height: 300, width, borderRadius: 30 }}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

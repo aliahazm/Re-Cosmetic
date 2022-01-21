@@ -14,19 +14,10 @@ import { SimpleLineIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
-import { auth } from "../../Database/firebase";
 import AppText from "../components/AppText";
+import Logout from "../../components/Logout";
 
 function More({ navigation }) {
-  const handleSignOut = () => {
-    auth
-      .signOut()
-      .then(() => {
-        navigation.replace(routes.LOGIN);
-      })
-      .catch((error) => alert(error.message));
-  };
-
   return (
     <SafeAreaView
       style={{
@@ -182,41 +173,7 @@ function More({ navigation }) {
             </View>
           </TouchableOpacity>
 
-          <View
-            style={{
-              padding: 20,
-              paddingTop: 5,
-              borderTopWidth: 1,
-              borderTopColor: colors.grey,
-            }}
-          >
-            {/* <TouchableOpacity
-              onPress={handleSignOut}
-              style={{ paddingVertical: 15, marginBottom: 25 }}
-            > */}
-            <TouchableOpacity
-              onPress={() => navigation.navigate(routes.LOGIN)}
-              style={{ paddingVertical: 15, marginBottom: 25 }}
-            >
-              <View style={{ flexDirection: "row", alignItems: "center" }}>
-                <Ionicons
-                  name="exit-outline"
-                  size={22}
-                  color={colors.darkGrey}
-                />
-                <AppText
-                  style={{
-                    fontSize: 15,
-                    marginLeft: 5,
-                    fontWeight: "500",
-                    color: colors.darkGrey,
-                  }}
-                >
-                  Logout
-                </AppText>
-              </View>
-            </TouchableOpacity>
-          </View>
+          <Logout/>
         </View>
       </View>
     </SafeAreaView>

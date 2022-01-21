@@ -19,20 +19,24 @@ export default class TransferPoints extends Component {
     super();
     this.state = {
       points: 0,
-      balance: 100
-    }
+      balance: 100,
+    };
   }
 
   transfer = () => {
     this.setState({
       points: this.state.points,
-      balance: this.state.balance - this.state.points
-    })
+      balance: this.state.balance - this.state.points,
+    });
 
-    let total_transfer = this.state.points/10;
+    let total_transfer = this.state.points / 10;
 
-    alert("You have transferred RM" + total_transfer + " to Humanitarian Care Malaysia Berhad!")
-  }
+    alert(
+      "You have transferred RM" +
+        total_transfer +
+        " to Humanitarian Care Malaysia Berhad!"
+    );
+  };
 
   render() {
     return (
@@ -80,10 +84,21 @@ export default class TransferPoints extends Component {
                 padding: 5,
                 fontSize: 30,
                 color: "#6A7D5A",
-                marginBottom: 20,
+                marginBottom: 10,
               }}
             >
               {this.state.balance}
+            </AppText>
+
+            <AppText
+              style={{
+                alignSelf: "center",
+                fontWeight: "500",
+                fontSize: 15,
+                color: colors.lightGreen,
+              }}
+            >
+              10 points = RM1
             </AppText>
           </View>
 

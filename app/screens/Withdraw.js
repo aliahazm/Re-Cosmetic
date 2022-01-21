@@ -21,20 +21,20 @@ export default class Withdraw extends Component {
     this.state = {
       points: 0,
       balance: 100,
-      total: 0
-    }
+      total: 0,
+    };
   }
 
   withdraw = () => {
     this.setState({
       balance: this.state.balance - this.state.points,
-      total: this.state.points/10
-    })
+      total: this.state.points / 10,
+    });
 
-    let total_withdraw = this.state.points/10;
+    let total_withdraw = this.state.points / 10;
 
-    alert("You have withdrawn RM" +  total_withdraw)
-  }
+    alert("You have withdrawn RM" + total_withdraw);
+  };
 
   render() {
     return (
@@ -82,10 +82,21 @@ export default class Withdraw extends Component {
                 padding: 5,
                 fontSize: 30,
                 color: "#6A7D5A",
-                marginBottom: 20,
+                marginBottom: 10,
               }}
             >
               {this.state.balance}
+            </AppText>
+
+            <AppText
+              style={{
+                alignSelf: "center",
+                fontWeight: "500",
+                fontSize: 15,
+                color: colors.lightGreen,
+              }}
+            >
+              10 points = RM1
             </AppText>
           </View>
 
@@ -107,8 +118,10 @@ export default class Withdraw extends Component {
               keyboardType="numeric"
             />
 
-            <AppText style={styles.title}>Total (RM): {this.state.total}</AppText>
-            
+            <AppText style={styles.title}>
+              Total (RM): {this.state.total}
+            </AppText>
+
             <View style={{ alignItems: "center" }}>
               <PointsButton title="Withdraw" onPress={this.withdraw} />
             </View>
