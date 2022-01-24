@@ -172,8 +172,30 @@ function More({ navigation }) {
               </AppText>
             </View>
           </TouchableOpacity>
-
-          <Logout/>
+          <TouchableOpacity
+            // onPress={() => this.handleSignOut()}
+            onPress={() => navigation.navigate(routes.LOGIN)}
+            style={{
+              paddingVertical: 15,
+              marginBottom: 25,
+              marginHorizontal: 23,
+            }}
+          >
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Ionicons name="exit-outline" size={22} color={colors.darkGrey} />
+              <AppText
+                style={{
+                  fontSize: 15,
+                  marginLeft: 5,
+                  fontWeight: "500",
+                  color: colors.darkGrey,
+                }}
+              >
+                Logout
+              </AppText>
+            </View>
+          </TouchableOpacity>
+          {/* <Logout/> */}
         </View>
       </View>
     </SafeAreaView>

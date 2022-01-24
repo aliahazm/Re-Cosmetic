@@ -12,7 +12,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
 
 export default class ItemCounter extends Component {
-  state = { count: 0 };
+  state = { count: 1 };
 
   setCount = () =>
     this.setState((initialState) => ({

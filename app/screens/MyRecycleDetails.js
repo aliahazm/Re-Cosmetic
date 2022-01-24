@@ -90,7 +90,7 @@ function MyRecycleDetails({ navigation }) {
             2x MiliandRose Liquid Matte Container
           </AppText>
           <AppText style={styles.category}>Date</AppText>
-          <AppText style={styles.title}>Saturday, 31-12-2021</AppText>
+          <AppText style={styles.title}>Friday, 25-2-2022</AppText>
           <AppText style={styles.category}>Venue</AppText>
           <AppText style={styles.title}>MiliandRose Central i-City</AppText>
           <View style={{ flexDirection: "row" }}>

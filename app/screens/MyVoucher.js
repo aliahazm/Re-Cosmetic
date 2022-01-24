@@ -96,7 +96,7 @@ function MyVoucher({ navigation }) {
             RC Voucher 30% Off, No Min Spend
           </AppText>
           <AppText style={styles.category}>Validity</AppText>
-          <AppText style={styles.title}>Till 31 December 2021</AppText>
+          <AppText style={styles.title}>Till 30 April 2022</AppText>
           <AppText style={styles.category}>Terms & Conditions</AppText>
           <Unorderedlist
             style={{
