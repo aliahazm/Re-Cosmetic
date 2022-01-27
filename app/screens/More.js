@@ -8,9 +8,7 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
+
 import { Ionicons } from "@expo/vector-icons";
 import routes from "../navigation/routes";
 import colors from "../config/colors";
