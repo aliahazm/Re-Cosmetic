@@ -98,10 +98,5 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     alignItems: "flex-start",
     justifyContent: "flex-start",
-    // flex: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
-    // marginTop: 50,
-    // padding: 16,
   },
 });

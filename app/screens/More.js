@@ -16,6 +16,7 @@ import routes from "../navigation/routes";
 import colors from "../config/colors";
 import AppText from "../components/AppText";
 import Logout from "../../components/Logout";
+import NameMore from "../../components/NameMore";
 
 function More({ navigation }) {
   return (
@@ -55,17 +56,7 @@ function More({ navigation }) {
           />
 
           <View style={{ marginTop: 40 }}>
-            <AppText
-              style={{
-                alignSelf: "center",
-                fontWeight: "500",
-                padding: 5,
-                fontSize: 20,
-                color: colors.white,
-              }}
-            >
-              Aleeya Sabreena
-            </AppText>
+            <NameMore />
 
             <AppText
               style={{

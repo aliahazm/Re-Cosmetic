@@ -7,6 +7,8 @@ import MyRewards from "../screens/MyRewards";
 import MyVoucher from "../screens/MyVoucher";
 import TransferPoints from "../screens/TransferPoints";
 import Withdraw from "../screens/Withdraw";
+import MyVoucher15 from "../screens/MyVoucher15";
+import MyVoucher50 from "../screens/MyVoucher50";
 
 const Stack = createNativeStackNavigator();
 
@@ -34,7 +36,6 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        //headerBackVisible: false,
         headerBackTitle: "Back",
       }}
     />
@@ -48,7 +49,6 @@ const MyPointsNavigator = () => (
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
-        //headerBackVisible: false,
         headerBackTitle: "Back",
       }}
     />
@@ -78,7 +78,30 @@ const MyPointsNavigator = () => (
         headerBackTitle: "Back",
       }}
     />
-
+    <Stack.Screen
+      name="MyVoucher15"
+      component={MyVoucher15}
+      options={{
+        title: "MY VOUCHER",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        headerShadowVisible: false,
+        headerBackTitle: "Back",
+      }}
+    />
+    <Stack.Screen
+      name="MyVoucher50"
+      component={MyVoucher50}
+      options={{
+        title: "MY VOUCHER",
+        headerTintColor: colors.olive,
+        headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
+        headerStyle: { backgroundColor: colors.white },
+        headerShadowVisible: false,
+        headerBackTitle: "Back",
+      }}
+    />
     <Stack.Screen
       name="MyVoucher"
       component={MyVoucher}
@@ -89,7 +112,6 @@ const MyPointsNavigator = () => (
         headerStyle: { backgroundColor: colors.white },
         headerShadowVisible: false,
         headerBackTitle: "Back",
-        headerBackVisible: true,
       }}
     />
   </Stack.Navigator>

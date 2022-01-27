@@ -7,9 +7,6 @@ import {
   View,
   Text,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 import AppText from "../components/AppText";
@@ -21,7 +18,6 @@ function AboutUs(props) {
         flex: 1,
       }}
     >
-      {/* Content */}
       <ScrollView
         style={{
           backgroundColor: colors.pink,
@@ -79,9 +75,6 @@ const styles = StyleSheet.create({
   },
 
   previousPage: {
-    // position: "absolute",
-    // top: 40,
-    // left: 30,
     backgroundColor: colors.creme,
     flex: 0.5,
     left: 25,

@@ -5,7 +5,7 @@ import Unorderedlist from "react-native-unordered-list";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
-function MyVoucher({ navigation }) {
+function MyVoucher50({ navigation }) {
   return (
     <SafeAreaView
       style={{
@@ -72,10 +72,10 @@ function MyVoucher({ navigation }) {
           }}
         >
           <AppText style={styles.voucherTitle}>
-            RC Voucher 30% Off, No Min Spend
+            RC Voucher 50% Off, No Min Spend
           </AppText>
           <AppText style={styles.category}>Validity</AppText>
-          <AppText style={styles.title}>Till 30 April 2022</AppText>
+          <AppText style={styles.title}>Till 31 March 2022</AppText>
           <AppText style={styles.category}>Terms & Conditions</AppText>
           <Unorderedlist
             style={{
@@ -182,4 +182,4 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
 });
-export default MyVoucher;
+export default MyVoucher50;

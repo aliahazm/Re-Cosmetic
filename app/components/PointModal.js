@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import {
-  Button,
-  Text,
   TouchableOpacity,
   StyleSheet,
   View,
@@ -9,15 +7,8 @@ import {
 } from "react-native";
 import Modal from "react-native-modal";
 import colors from "../config/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { SubmitButton } from "./forms";
-import { AppFormField } from "./forms";
 import AppText from "./AppText";
 import Icon from "./Icon";
-import { AntDesign } from "@expo/vector-icons";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-import ItemCounter from "./ItemCounter";
-import routes from "../navigation/routes";
 export default class PointModal extends Component {
   state = {
     visibleModal: null,
@@ -62,14 +53,11 @@ export default class PointModal extends Component {
       <View style={styles.modalContent}>
         <View
           style={{
-            //flex: 1,
             alignItems: "flex-start",
             justifyContent: "flex-start",
           }}
         >
-          <TouchableOpacity
-          // onPress={() => navigation.navigate(routes.TERMS_AND_CONDITIONS)}
-          >
+          <TouchableOpacity>
             <Icon
               name="information-outline"
               size={45}
@@ -80,7 +68,6 @@ export default class PointModal extends Component {
         </View>
         <View
           style={{
-            //flex: 1,
             alignItems: "flex-start",
             justifyContent: "flex-start",
             flexDirection: "row",
@@ -137,7 +124,6 @@ export default class PointModal extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
@@ -180,7 +166,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     borderRadius: 20,
     borderColor: "rgba(0, 0, 0, 0.1)",
-    //marginTop: 5,
   },
   bottomModal: {
     justifyContent: "flex-end",

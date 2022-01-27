@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  TextInput,
-  View,
-  StyleSheet,
-  Modal,
-  Button,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, Modal, FlatList } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -18,7 +10,7 @@ import AppScreen from "./AppScreen";
 import PickerItem from "./PickerItem";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import colors from "../config/colors";
-//import colors from "../config/colors";
+
 function AppPicker({
   icon,
   items,
@@ -62,11 +54,6 @@ function AppPicker({
         presentationStyle="formSheet"
       >
         <AppScreen>
-          {/* <Button
-            title="Close"
-            onPress={() => setModalVisible(false)}
-            color={colors.danger}
-          /> */}
           <View
             style={{
               marginVertical: 15,

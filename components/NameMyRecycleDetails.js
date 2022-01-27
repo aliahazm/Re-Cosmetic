@@ -4,7 +4,7 @@ import firebase from "../Database/firebase";
 import AppText from "../app/components/AppText";
 import colors from "../app/config/colors";
 
-export default class DisplayName extends Component {
+export default class NameMyRecycleDetails extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,20 +20,21 @@ export default class DisplayName extends Component {
 
     return (
       <View>
-        <AppText style={styles.welcome}>
-          Hello, {this.state.displayName}!
-        </AppText>
+        <AppText style={styles.title}>{this.state.displayName}</AppText>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  welcome: {
-    alignSelf: "center",
-    fontWeight: "600",
-    padding: 5,
-    fontSize: 30,
-    color: "#6A7D5A",
+  title: {
+    color: colors.grey,
+    fontSize: 17,
+    fontWeight: "bold",
+    marginHorizontal: 25,
+    // marginVertical: 3,
+    justifyContent: "center",
+    textAlign: "justify",
+    //lineHeight: 19,
   },
 });

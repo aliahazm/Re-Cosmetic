@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: colors.lightGreen,
     marginBottom: 10,
-    //overflow: "hidden",
   },
 
   detailsContainer: {

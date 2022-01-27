@@ -2,7 +2,6 @@ import React from "react";
 import { Text, StyleSheet } from "react-native";
 import colors from "../../config/colors";
 
-// <Heading>My Heading</Heading>
 function AppText({ children, style }) {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }

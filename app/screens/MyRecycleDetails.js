@@ -1,13 +1,9 @@
 import React from "react";
 import {
-  ScrollView,
   SafeAreaView,
   Image,
-  ImageBackground,
   StyleSheet,
   View,
-  Text,
-  Button,
   Alert,
   TouchableOpacity,
 } from "react-native";
@@ -17,6 +13,8 @@ import Icon from "../components/Icon";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
+import NameMyRecycleDetails from "../../components/NameMyRecycleDetails";
+
 function MyRecycleDetails({ navigation }) {
   return (
     <SafeAreaView
@@ -33,7 +31,7 @@ function MyRecycleDetails({ navigation }) {
           justifyContent: "center",
         }}
       >
-        <View //QR Code
+        <View
           style={{
             backgroundColor: colors.white,
             flex: 0.3,
@@ -62,7 +60,7 @@ function MyRecycleDetails({ navigation }) {
           />
         </View>
 
-        <View //Details
+        <View
           style={{
             backgroundColor: colors.white,
             flex: 0.6,
@@ -84,7 +82,7 @@ function MyRecycleDetails({ navigation }) {
           }}
         >
           <AppText style={styles.category}>Name</AppText>
-          <AppText style={styles.title}>Aleeya Sabreena</AppText>
+          <NameMyRecycleDetails />
           <AppText style={styles.category}>Recycle Item</AppText>
           <AppText style={styles.title}>
             2x MiliandRose Liquid Matte Container
@@ -113,13 +111,10 @@ function MyRecycleDetails({ navigation }) {
           <AppText style={styles.title}>#25299</AppText>
         </View>
 
-        <View //Button : SAVE AS IMAGE
+        <View
           style={{
             width: "90%",
-            //height: 100,
             flex: 0.15,
-            //marginLeft: 60,
-            //bottom: 0,
           }}
         >
           <AppButton
@@ -172,13 +167,10 @@ const styles = StyleSheet.create({
   category: {
     color: colors.grey,
     fontSize: 14,
-    //fontWeight: "bold",
     marginHorizontal: 25,
-    //marginVertical: 5,
     marginTop: 20,
     justifyContent: "center",
     textAlign: "justify",
-    //lineHeight: 19,
   },
 
   title: {
@@ -186,10 +178,8 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "bold",
     marginHorizontal: 25,
-    // marginVertical: 3,
     justifyContent: "center",
     textAlign: "justify",
-    //lineHeight: 19,
   },
 });
 export default MyRecycleDetails;

@@ -7,6 +7,8 @@ export default Object.freeze({
   ALL_REWARDS: "AllRewards",
   MY_REWARDS: "MyRewards",
   MY_VOUCHER: "MyVoucher",
+  MYVOUCHER15: "MyVoucher15",
+  MYVOUCHER50: "MyVoucher50",
   RECYCLE_STEPS: "RecycleSteps",
   POINT: "Point",
   TERMS_AND_CONDITIONS: "TermsAndConditions",

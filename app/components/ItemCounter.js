@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  SafeAreaView,
-} from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Component } from "react";
 import colors from "../config/colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
 
 export default class ItemCounter extends Component {
@@ -50,7 +43,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.pink,
     alignItems: "center",
-    //justifyContent: "center",
   },
 
   counterNumber: {

@@ -1,11 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
-import AppCard from "./AppCard";
 import AppText from "./AppText";
-import Icon from "./Icon";
 
-function BrandPickerItem({ item, image, onPress }) {
+function BrandPickerItem({ item, onPress }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>

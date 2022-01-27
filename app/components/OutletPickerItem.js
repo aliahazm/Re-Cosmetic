@@ -7,11 +7,6 @@ function OutletPickerItem({ item, onPress }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>
-        {/* <Icon
-          backgroundColor={item.backgroundColor}
-          name={item.icon}
-          size={80}
-        /> */}
         <AppText styles={styles.label}>{item.label}</AppText>
       </TouchableOpacity>
     </View>

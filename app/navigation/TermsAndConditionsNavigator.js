@@ -15,7 +15,6 @@ const TermsAndConditionsNavigator = () => (
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
-        //headerShadowVisible: false,
         headerBackVisible: false,
       }}
     />

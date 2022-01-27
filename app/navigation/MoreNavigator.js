@@ -30,7 +30,6 @@ const MoreNavigator = () => (
     <Stack.Screen
       name="RecycleSteps"
       component={RecycleSteps}
-      //options={{ headerShown: false }}
       options={{
         title: "HOW IT WORKS",
         headerTintColor: colors.olive,

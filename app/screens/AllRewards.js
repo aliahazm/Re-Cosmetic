@@ -8,27 +8,20 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
 
-//import AppText from './app/components/AppText';
 import routes from "../navigation/routes";
-import AppButton from "../components/AppButton";
 import colors from "../config/colors";
 import AppText from "../components/AppText";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import RedeemButton from "../components/RedeemButton";
 function AllRewards({ navigation }) {
   return (
-    //Header: ALL REWARDSS
     <SafeAreaView
       style={{
         backgroundColor: colors.creme,
         flex: 1,
       }}
     >
-      <View //Secondary Flexbox : Buttons
+      <View
         style={{
           backgroundColor: colors.creme,
           flex: 0.075,
@@ -36,9 +29,7 @@ function AllRewards({ navigation }) {
           justifyContent: "center",
         }}
       >
-        <View //Button : All Rewards
-          style={styles.allRewardsButton}
-        >
+        <View style={styles.allRewardsButton}>
           <TouchableOpacity
             onPress={() => navigation.navigate(routes.ALL_REWARDS)}
           >
@@ -46,9 +37,7 @@ function AllRewards({ navigation }) {
           </TouchableOpacity>
         </View>
 
-        <View //Button : My Rewards
-          style={styles.myRewardsButton}
-        >
+        <View style={styles.myRewardsButton}>
           <TouchableOpacity
             onPress={() => navigation.navigate(routes.MY_REWARDS)}
           >
@@ -57,7 +46,7 @@ function AllRewards({ navigation }) {
         </View>
       </View>
 
-      <View //Button Highlights
+      <View
         style={{
           backgroundColor: colors.creme,
           flex: 0.003,
@@ -65,22 +54,20 @@ function AllRewards({ navigation }) {
           justifyContent: "center",
         }}
       >
-        <View //Highlight : Grey
+        <View
           style={{
             backgroundColor: colors.grey,
             flex: 1,
           }}
         ></View>
 
-        <View //Highlight : Creme
+        <View
           style={{
             backgroundColor: colors.pink,
             flex: 1,
           }}
         ></View>
       </View>
-
-      {/* Content */}
 
       <View
         style={{
@@ -90,7 +77,7 @@ function AllRewards({ navigation }) {
           justifyContent: "center",
         }}
       >
-        <View //First Content Flexbox : RC VOUCHER 15% OFF
+        <View
           style={{
             backgroundColor: colors.white,
             flex: 0.55,
@@ -100,7 +87,7 @@ function AllRewards({ navigation }) {
             marginTop: 25,
           }}
         >
-          <View //Image : Logo.png
+          <View
             style={{
               flex: 0.4,
               borderRightColor: colors.olive,
@@ -110,7 +97,7 @@ function AllRewards({ navigation }) {
             <Image style={styles.logo} source={require("../assets/Logo.png")} />
           </View>
 
-          <View //RC VOUCHER 15% OFF DETAILS
+          <View
             style={{
               flex: 0.6,
               alignItems: "center",
@@ -155,7 +142,7 @@ function AllRewards({ navigation }) {
             </AppText>
           </View>
         </View>
-        <View //Second Content Flexbox : RC VOUCHER 30% OFF
+        <View
           style={{
             backgroundColor: colors.white,
             flex: 0.55,
@@ -165,7 +152,7 @@ function AllRewards({ navigation }) {
             marginTop: 10,
           }}
         >
-          <View //Image : Logo.png
+          <View
             style={{
               flex: 0.4,
               borderRightColor: colors.olive,
@@ -175,7 +162,7 @@ function AllRewards({ navigation }) {
             <Image style={styles.logo} source={require("../assets/Logo.png")} />
           </View>
 
-          <View //RC VOUCHER 30% OFF DETAILS
+          <View
             style={{
               flex: 0.6,
               alignItems: "center",
@@ -219,7 +206,7 @@ function AllRewards({ navigation }) {
             </AppText>
           </View>
         </View>
-        <View //Third Content Flexbox : RC VOUCHER 50% OFF
+        <View
           style={{
             backgroundColor: colors.white,
             flex: 0.55,
@@ -230,7 +217,7 @@ function AllRewards({ navigation }) {
             marginBottom: 25,
           }}
         >
-          <View //Image : Logo.png
+          <View
             style={{
               flex: 0.4,
               borderRightColor: colors.olive,
@@ -240,7 +227,7 @@ function AllRewards({ navigation }) {
             <Image style={styles.logo} source={require("../assets/Logo.png")} />
           </View>
 
-          <View //RC VOUCHER 50% OFF DETAILS
+          <View
             style={{
               flex: 0.6,
               alignItems: "center",
@@ -272,7 +259,6 @@ function AllRewards({ navigation }) {
             </AppText>
             <RedeemButton
               title="Redeem"
-              //onPress={() => console.log("Tapped")}
               onPress={() =>
                 Alert.alert(
                   "Voucher Redeemed Successfully!",
@@ -285,7 +271,7 @@ function AllRewards({ navigation }) {
             </AppText>
           </View>
         </View>
-        <View //Empty
+        <View
           style={{
             backgroundColor: colors.pink,
             flex: 0.29,
@@ -316,9 +302,6 @@ const styles = StyleSheet.create({
   },
 
   previousPage: {
-    // position: "absolute",
-    // top: 40,
-    // left: 30,
     backgroundColor: colors.creme,
     flex: 0.5,
     left: 25,
@@ -349,7 +332,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: "center",
     textAlign: "justify",
-    //lineHeight: 19,
   },
 
   RCPoints: {
@@ -360,18 +342,16 @@ const styles = StyleSheet.create({
     marginVertical: -19,
     justifyContent: "center",
     textAlign: "justify",
-    //lineHeight: 19,
   },
 
   earn: {
     color: colors.grey,
     fontSize: 16,
-    //fontWeight: "bold",
+
     marginHorizontal: 103,
     marginVertical: 0,
     justifyContent: "center",
     textAlign: "justify",
-    //lineHeight: 19,
   },
 
   allRewardsButton: {

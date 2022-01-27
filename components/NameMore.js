@@ -4,7 +4,7 @@ import firebase from "../Database/firebase";
 import AppText from "../app/components/AppText";
 import colors from "../app/config/colors";
 
-export default class DisplayName extends Component {
+export default class NameMore extends Component {
   constructor() {
     super();
     this.state = {
@@ -20,20 +20,18 @@ export default class DisplayName extends Component {
 
     return (
       <View>
-        <AppText style={styles.welcome}>
-          Hello, {this.state.displayName}!
-        </AppText>
+        <AppText style={styles.title}>{this.state.displayName}</AppText>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  welcome: {
+  title: {
     alignSelf: "center",
-    fontWeight: "600",
+    fontWeight: "500",
     padding: 5,
-    fontSize: 30,
-    color: "#6A7D5A",
+    fontSize: 20,
+    color: colors.white,
   },
 });
