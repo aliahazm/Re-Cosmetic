@@ -24,18 +24,21 @@ export default class TransferPoints extends Component {
   }
 
   transfer = () => {
-    this.setState({
-      points: this.state.points,
-      balance: this.state.balance - this.state.points,
-    });
+    if (this.state.points > this.state.balance) {
+      alert("Insufficient points!");
+    } else {
+      this.setState({
+        points: this.state.points,
+        balance: this.state.balance - this.state.points,
+      });
+      let total_transfer = this.state.points / 10;
 
-    let total_transfer = this.state.points / 10;
-
-    alert(
-      "You have transferred RM" +
-        total_transfer +
-        " to Humanitarian Care Malaysia Berhad!"
-    );
+      alert(
+        "You have transferred RM" +
+          total_transfer +
+          " to Humanitarian Care Malaysia Berhad!"
+      );
+    }
   };
 
   render() {

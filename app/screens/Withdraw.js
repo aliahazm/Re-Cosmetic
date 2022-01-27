@@ -26,14 +26,18 @@ export default class Withdraw extends Component {
   }
 
   withdraw = () => {
-    this.setState({
-      balance: this.state.balance - this.state.points,
-      total: this.state.points / 10,
-    });
+    if (this.state.points > this.state.balance) {
+      alert("Insufficient points!");
+    } else {
+      this.setState({
+        balance: this.state.balance - this.state.points,
+        total: this.state.points / 10,
+      });
 
-    let total_withdraw = this.state.points / 10;
+      let total_withdraw = this.state.points / 10;
 
-    alert("You have withdrawn RM" + total_withdraw);
+      alert("You have withdrawn RM" + total_withdraw);
+    }
   };
 
   render() {

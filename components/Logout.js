@@ -49,7 +49,7 @@ export default class Logout extends Component {
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Ionicons
-              name="exit-outline"
+              name="log-out-outline"
               size={22}
               color={colors.darkGrey}
             />

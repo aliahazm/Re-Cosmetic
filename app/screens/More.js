@@ -151,12 +151,12 @@ function More({ navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate(routes.CHANGE_PASSWORD)}
+            onPress={() => navigation.navigate(routes.UPDATE_PROFILE)}
             style={style.touchable}
           >
             <View style={style.option}>
               <Ionicons
-                name="keypad-outline"
+                name="create-outline"
                 size={22}
                 color={colors.darkGrey}
               />
@@ -168,12 +168,49 @@ function More({ navigation }) {
                   color: colors.darkGrey,
                 }}
               >
-                Change Password
+                Update Profile
               </AppText>
             </View>
           </TouchableOpacity>
 
-          <Logout/>
+          <View
+        style={{
+          padding: 20,
+          paddingTop: 5,
+          borderTopWidth: 1,
+          borderTopColor: colors.grey,
+        }}
+      >
+        {/* <TouchableOpacity
+          onPress={handleSignOut}
+          style={{ paddingVertical: 15, marginBottom: 25 }}
+        > */}
+        <TouchableOpacity
+          onPress={() => navigation.navigate(routes.LOGIN)}
+          style={{ paddingVertical: 15, marginBottom: 25 }}
+        >
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Ionicons
+              name="log-out-outline"
+              size={22}
+              color={colors.darkGrey}
+            />
+            <AppText
+              style={{
+                fontSize: 15,
+                marginLeft: 5,
+                fontWeight: "500",
+                color: colors.darkGrey,
+              }}
+            >
+              Logout
+            </AppText>
+          </View>
+        </TouchableOpacity>
+      </View>
+
+
+          {/* <Logout/> */}
         </View>
       </View>
     </SafeAreaView>

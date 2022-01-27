@@ -55,7 +55,7 @@ function Home({ navigation }) {
               borderRadius: 90,
               borderWidth: 0.5,
               borderColor: colors.olive,
-              marginLeft: 50,
+              marginLeft: 45,
             }}
           />
 

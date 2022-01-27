@@ -28,7 +28,7 @@ export default class ImageSlider extends React.Component {
 
   render() {
     return (
-      <View style={{ width, height }}>
+      <View style={{ width, height}}>
         <ScrollView
           pagingEnabled
           horizontal

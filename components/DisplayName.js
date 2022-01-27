@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     fontWeight: "600",
     padding: 5,
-    fontSize: 30,
+    fontSize: 20,
     color: "#6A7D5A"
   }
 });
