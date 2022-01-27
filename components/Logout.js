@@ -56,7 +56,11 @@ export default class Logout extends Component {
           style={{ paddingVertical: 15, marginBottom: 25 }}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Ionicons name="exit-outline" size={22} color={colors.darkGrey} />
+            <Ionicons
+              name="log-out-outline"
+              size={22}
+              color={colors.darkGrey}
+            />
             <AppText
               style={{
                 fontSize: 15,

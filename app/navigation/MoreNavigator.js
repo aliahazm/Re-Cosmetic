@@ -7,7 +7,7 @@ import colors from "../config/colors";
 import More from "../screens/More";
 import AboutUs from "../screens/AboutUs";
 import TermsAndConditions from "../screens/TermsAndConditions";
-import ChangePassword from "../screens/ChangePassword";
+import UpdateProfile from "../screens/UpdateProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -80,10 +80,10 @@ const MoreNavigator = () => (
     />
 
     <Stack.Screen
-      name="ChangePassword"
-      component={ChangePassword}
+      name="UpdateProfile"
+      component={UpdateProfile}
       options={{
-        title: "Password",
+        title: "PROFILE",
         headerTintColor: colors.olive,
         headerTitleStyle: { fontSize: 20, fontWeight: "bold" },
         headerStyle: { backgroundColor: colors.white },
