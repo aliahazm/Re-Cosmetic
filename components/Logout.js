@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Button,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import AppText from "../app/components/AppText";
 import colors from "../app/config/colors";
 import firebase from "../Database/firebase";
@@ -25,13 +32,13 @@ export default class Logout extends Component {
 
   render() {
     this.state = {
-       displayName: firebase.auth().currentUser.displayName,
-       displayEmail: firebase.auth().currentUser.displayEmail,
-       mobileNumber: firebase.auth().currentUser.mobileNumber,
-       uid: firebase.auth().currentUser.uid,
+      displayName: firebase.auth().currentUser.displayName,
+      displayEmail: firebase.auth().currentUser.displayEmail,
+      mobileNumber: firebase.auth().currentUser.mobileNumber,
+      uid: firebase.auth().currentUser.uid,
     };
     return (
-        <View
+      <View
         style={{
           padding: 20,
           paddingTop: 5,
@@ -44,7 +51,8 @@ export default class Logout extends Component {
           style={{ paddingVertical: 15, marginBottom: 25 }}
         > */}
         <TouchableOpacity
-          onPress={() => this.handleSignOut()}
+          // onPress={() => this.handleSignOut()}
+          onPress={() => navigation.navigate(routes.LOGIN)}
           style={{ paddingVertical: 15, marginBottom: 25 }}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>

@@ -85,21 +85,21 @@ function MyRewards({ navigation }) {
       >
         <AppCard
           title="RC Voucher 15% OFF"
-          subTitle="Valid Until : 31 December 2021"
+          subTitle="Valid Until : 28 February 2022"
           image={require("../assets/RCVoucher/RCVoucher15.png")}
           onPress={() => navigation.navigate(routes.MY_VOUCHER)}
         />
 
         <AppCard
-          title="RC Voucher 30% OFF"
-          subTitle="Valid Until : 31 December 2021"
+          title="RC Voucher 50% OFF"
+          subTitle="Valid Until : 31 March 2022"
           image={require("../assets/RCVoucher/RCVoucher30.png")}
           onPress={() => navigation.navigate(routes.MY_VOUCHER)}
         />
 
         <AppCard
-          title="RC Voucher 50% OFF"
-          subTitle="Valid Until : 31 December 2021"
+          title="RC Voucher 30% OFF"
+          subTitle="Valid Until : 31 April 2022"
           image={require("../assets/RCVoucher/RCVoucher50.png")}
           onPress={() => navigation.navigate(routes.MY_VOUCHER)}
         />
